@@ -5,8 +5,7 @@ import { colours } from "../../../styles/colours";
 import "./style.css";
 
 const WoahYouGoBigGuy = () => {
-  const { minimalMode, toggleMinimalMode } = usePortfolioContext();
-  console.log({ minimalMode, toggleMinimalMode });
+  const { minimalMode } = usePortfolioContext();
 
   const [reverse, setReverse] = useState(false);
 
@@ -51,7 +50,6 @@ const WoahYouGoBigGuy = () => {
       duration: 750,
     },
     onResolve: () => {
-      console.log();
       setReverse(!reverse);
     },
   }));
