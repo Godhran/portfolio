@@ -55,10 +55,11 @@ const ImageInfoPanel = ({
                     className={`text-center text-md-start d-flex flex-column align-items-center align-items-md-start ${
                       index + 1 === content.length ? "" : "mb-5"
                     }`}
+                    key={`content_${index}_LTR`}
                   >
                     {skills ? (
                       <div>
-                        {skills.map((skill) => {
+                        {skills.map((skill, index) => {
                           const isLink = !!links[skill];
                           const colour = minimalMode
                             ? colours.minimal.light
@@ -66,7 +67,7 @@ const ImageInfoPanel = ({
 
                           if (isLink) {
                             return (
-                              <a href={links[skill]}>
+                              <a href={links[skill]} key={`skill_${index}_${skill}_LTR`}>
                                 <FontAwesomeIcon
                                   icon={["fab", [skill]]}
                                   className="ms-2 mx-3"
@@ -79,6 +80,7 @@ const ImageInfoPanel = ({
 
                           return (
                             <FontAwesomeIcon
+                              key={`skill_${index}_${skill}_LTR`}
                               icon={["fab", [skill]]}
                               color={colour}
                               className="ms-2 mx-3"
@@ -115,6 +117,7 @@ const ImageInfoPanel = ({
                     className={`text-center text-md-start d-flex flex-column align-items-center align-items-md-start ${
                       index + 1 === content.length ? "" : "mb-5"
                     }`}
+                    key={`content_${index}_RTL`}
                   >
                     <div>
                       {skills ? (
@@ -127,7 +130,7 @@ const ImageInfoPanel = ({
 
                             if (isLink) {
                               return (
-                                <a href={links[skill]}>
+                                <a href={links[skill]} key={`skill_${index}_${skill}_RTL`}>
                                   <FontAwesomeIcon
                                     icon={["fab", [skill]]}
                                     className="ms-2 mx-3"
@@ -140,6 +143,7 @@ const ImageInfoPanel = ({
 
                             return (
                               <FontAwesomeIcon
+                                key={`skill_${index}_${skill}_RTL`}
                                 icon={["fab", [skill]]}
                                 color={colour}
                                 className="ms-2 mx-3"
@@ -158,7 +162,10 @@ const ImageInfoPanel = ({
                 ))}
               </div>
 
-              <div className="col order-first order-md-last" data-aos="fade-left">
+              <div
+                className="col order-first order-md-last"
+                data-aos="fade-left"
+              >
                 {animation}
               </div>
             </>

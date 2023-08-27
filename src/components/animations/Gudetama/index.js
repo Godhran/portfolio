@@ -219,21 +219,6 @@ const Gudetama = () => {
           points="1168.25,212.38 1807.27,-671.32 1765.79,-700.64 1146.21,196.81 	"
         />
       </animated.g>
-      {/* <g id="textPATH">
-                <text>
-                <textPath href="#textPathOne" className="textPathOneSVG" fill="#fcb040" style="font-family: 'Knewave';" [attr.startOffset]=textOffsetOne side="right" textLength="60%" font-size="150">
-                    {{message[0]}}
-                    <animate id="textPathOneAnimation" attributeName="startOffset" from="100%" to ="-100%" dur="4s" begin="0s;textPathOneAnimation.end+5s" />
-                </textPath>
-            // </text>
-            // <text>
-            //     <textPath href="#textPathTwo" fill="#fcb040" style="font-family: 'Knewave';" [attr.startOffset]=textOffsetTwo side="right" textLength="100%" font-size="150">
-            //         // {{message[1]}}
-            //         <animate attributeName="startOffset" from="-100%" to ="100%" begin="textPathOneAnimation.end" dur="6s"/>
-            //     </textPath>
-            // </text>
-    <text id="gudetamaPah" x="550" y="550" fill="#fcb040" style="font-family: Knewave;stroke:white;stroke-width:10" font-size="150">Pah!</text>
-            </g> */}
 
       <g id="textPATH">
         <text>
@@ -243,7 +228,7 @@ const Gudetama = () => {
             style={styles.text}
             side="right"
             textLength="60%"
-            font-size="150"
+            fontSize="150"
             startOffset={textOffsetOne}
           >
             {copy.soTiring}
@@ -264,7 +249,7 @@ const Gudetama = () => {
             side="right"
             textLength="100%"
             startOffset={textOffsetTwo}
-            font-size="150"
+            fontSize="150"
           >
             {copy.iCant}
             <animate
@@ -285,7 +270,7 @@ const Gudetama = () => {
             opacity={pahText.opacity}
             scale={pahText.opacity}
             style={styles.pah}
-            font-size={150}
+            fontSize={150}
           >
             Pah!
           </animated.text>

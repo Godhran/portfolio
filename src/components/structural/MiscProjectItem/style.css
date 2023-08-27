@@ -1,16 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Knewave&family=Major+Mono+Display&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 h2 {
   font-weight: bold;
 }
 
 h4 {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: bold;
 }
 
 p {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
 }
 
