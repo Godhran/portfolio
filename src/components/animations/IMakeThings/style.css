@@ -1,0 +1,35 @@
+.symbolText {
+  text-anchor: middle;
+  font-family: "Major Mono Display";
+  text-transform: lowercase;
+  font-size: 9em;
+  font-weight: bold;
+}
+
+.animatedText {
+    fill: none;
+    stroke: transparent;
+    stroke-dasharray: 15% 30%;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    animation: 5s ease-in-out infinite stroke-offset
+}
+
+.animatedText:nth-child(1) {
+    stroke-dashoffset: 15%
+}
+
+.animatedText:nth-child(2) {
+    stroke-dashoffset: 30%
+}
+
+.animatedText:nth-child(3) {
+    stroke-dashoffset: 45%
+}
+
+@keyframes stroke-offset {
+    75% {
+        stroke-dashoffset: 45%;
+        stroke-dasharray: 0 112.5%
+    }
+}
