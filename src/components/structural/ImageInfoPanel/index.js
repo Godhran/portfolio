@@ -1,7 +1,6 @@
 import React from "react";
 import { usePortfolioContext } from "../../../context";
 import { colours } from "../../../styles/colours";
-import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ImageInfoPanel = ({

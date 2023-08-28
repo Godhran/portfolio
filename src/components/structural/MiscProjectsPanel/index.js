@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { usePortfolioContext } from "../../../context";
 import { colours } from "../../../styles/colours";
-import "./style.css";
 import Gallery from "../Gallery";
 import UnderConstruction from "../../animations/UnderConstruction";
 import MiscProjectsItem from "../MiscProjectItem";
