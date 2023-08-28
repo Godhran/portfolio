@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <section id="Socials">
       <footer className="text-center">
-        <div className="container pt-4">
+        <div className="container pt-4 mx-auto">
           <section className="mb-4">
             <Social
               href={linkedIn}

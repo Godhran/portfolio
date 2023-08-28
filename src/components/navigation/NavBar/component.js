@@ -3,9 +3,20 @@ import { colours } from "../../../styles/colours";
 import { faSkull, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const nav = ({ minimalMode, className, children }) => (
+  <nav className={className}>{children}</nav>
+);
+
 const linkText = ({ minimalMode, className, href, children }) => (
-  <a className={`navbar-brand ${className}`} href={href}>
-    {children}
+  <a href={href} className={`flex items-center ${className}`}>
+    {/* <img
+      src="https://flowbite.com/docs/images/logo.svg"
+      class="h-8 mr-3"
+      alt="Flowbite Logo"
+    /> */}
+    <span class="self-center text-2xl font-semibold whitespace-nowrap">
+      {children}
+    </span>
   </a>
 );
 
@@ -40,6 +51,11 @@ const navBarToggler = ({ onClick }) => (
     <span className="navbar-toggler-icon"></span>
   </button>
 );
+export const Nav = styled(nav)`
+  background-color: ${(props) =>
+    props.minimalMode ? colours.minimal.light : colours.vibrant.light};
+`;
+
 
 export const Brand = styled(linkText)`
   color: ${(props) =>

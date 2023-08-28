@@ -41,6 +41,7 @@ const App = () => {
       <ImageInfoPanel
         animation={<WoahYouGoBigGuy />}
         section='About'
+        rightToLeft={false}
         content={[
           {
             title: "I do",
@@ -90,7 +91,7 @@ const App = () => {
       <ImageInfoPanel
         animation={<Gudetama />}
         header={"Recent Projects"}
-        rightToLeft
+        rightToLeft={true}
         section='Projects'
         content={[
           {

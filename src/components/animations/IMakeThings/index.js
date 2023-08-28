@@ -13,8 +13,8 @@ const IMakeThings = () => {
   const symbolTextID = "symbolText";
 
   return (
-    <section className="p-3 p-md-5 width-100 mt-5 mt-md-0" data-aos="fade-up">
-      <Svg viewBox="0 0 1000 400" maxWidth='1250px'>
+    <section className="p-3 p-md-5 max-width-full mt-5 mt-md-0" data-aos="fade-up">
+      <Svg viewBox="0 0 1000 400" maxWidth='1250px' className='mx-auto'>
         <symbol id={symbolTextID}>
           <SymbolText message={copy.iMake} x="50%" y="40%" />
           <SymbolText message={copy.things} x="50%" y="80%" />

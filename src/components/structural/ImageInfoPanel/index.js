@@ -29,6 +29,8 @@ const ImageInfoPanel = ({
     },
   };
 
+  console.log(rightToLeft)
+
   return (
     // <section id={section} className="mt-5">
     //   <div className="container py-4 py-xl-5">
@@ -179,26 +181,26 @@ const ImageInfoPanel = ({
         <div className="grid grid-cols-1 md:grid-cols-2">
           {!rightToLeft ? (
             <>
-              <div data-aos="fade-right" className="col justify-content-center">
+              <div data-aos="fade-right" className="col flex flex-wrap content-center">
                 {animation}
               </div>
               <div
-                className="col d-flex flex-column justify-content-center p-4 rounded"
+                className="col flex flex-wrap content-evenly p-8 md:rounded content-evenly justify-items-center"
                 data-aos="fade-left"
                 style={styles.textPanel}
               >
                 {header ? (
                   <div
-                    className={`text-center text-md-start d-flex flex-column align-items-center align-items-md-start mb-5`}
+                    className={`text-center text-md-start d-flex flex-column mx-auto align-items-md-start mb-5`}
                   >
                     <h4>{header}</h4>
                   </div>
                 ) : null}
                 {content.map(({ title, skills, body, links }, index) => (
                   <div
-                    className={`text-center text-md-start d-flex flex-column align-items-center align-items-md-start ${
-                      index + 1 === content.length ? "" : "mb-5"
-                    }`}
+                  className={`text-center mx-auto ${
+                    index + 1 === content.length ? "" : "mb-5"
+                  }`}
                     key={`content_${index}_LTR`}
                   >
                     {skills ? (
@@ -217,7 +219,7 @@ const ImageInfoPanel = ({
                               >
                                 <FontAwesomeIcon
                                   icon={["fab", [skill]]}
-                                  className="ms-2 mx-3"
+                                  className="mx-3"
                                   size="2x"
                                   style={styles.linkIcon}
                                 />
@@ -230,7 +232,7 @@ const ImageInfoPanel = ({
                               key={`skill_${index}_${skill}_LTR`}
                               icon={["fab", [skill]]}
                               color={colour}
-                              className="ms-2 mx-3"
+                              className="mx-3"
                               size="2x"
                             />
                           );
@@ -248,7 +250,7 @@ const ImageInfoPanel = ({
           ) : (
             <>
               <div
-                className="col d-flex flex-column justify-content-center p-4 rounded"
+                className="col flex flex-wrap content-evenly p-8 md:rounded content-evenly justify-items-center"
                 data-aos="fade-right"
                 style={styles.textPanel}
               >
@@ -313,7 +315,7 @@ const ImageInfoPanel = ({
               </div>
 
               <div
-                className="col order-first order-md-last"
+                className="col order-first md:order-last"
                 data-aos="fade-left"
               >
                 {animation}

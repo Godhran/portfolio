@@ -23,7 +23,7 @@ const MiscProjectsItem = ({ children, animation = "fade-up" }) => {
     <div className="container py-4 py-xl-5">
       <div className="row row-cols-1">
         <div
-          className="col d-flex flex-column justify-content-center p-4 rounded"
+          className="col d-flex flex-column justify-content-center p-4 md:rounded"
           data-aos={animation}
           style={styles.textPanel}
         >
