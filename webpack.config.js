@@ -1,21 +1,12 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  mode: "development",
+  entry: path.resolve(__dirname, "/src/index.js"),
   output: {
-    path: path.join(__dirname, "/dist"), // the bundle output path
-    filename: "bundle.js", // the name of the bundle
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "public/index.html", // to import index.html file inside index.js
-    }),
-  ],
-  devServer: {
-    port: 3030, // you can change the port
-  },
-  externals: {
-    react: "React",
+    path: path.resolve(__dirname, "dist"),
+    filename: "index.js",
   },
   module: {
     rules: [
@@ -24,6 +15,9 @@ module.exports = {
         exclude: /node_modules/, // excluding the node_modules folder
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
         },
       },
       {
@@ -36,13 +30,27 @@ module.exports = {
         options: { limit: false },
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: require.resolve("url-loader"),
-        options: {
-          limit: 10000,
-          name: "static/media/[name].[hash:8].[ext]",
-        },
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: ["file-loader"],
+      },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
       },
     ],
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM",
   },
 };

@@ -1,19 +1,30 @@
+import React from 'react';
 import "./App.css";
-import NavBar from "./components/navigation/NavBar";
-import WoahYouGoBigGuy from "./components/animations/WoahYouGoBigGuy";
+// import NavBar from "./components/navigation/NavBar";
+// import WoahYouGoBigGuy from "./components/animations/WoahYouGoBigGuy";
 import { usePortfolioContext } from "./context";
 import { colours } from "./styles/colours";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faSkull } from "@fortawesome/free-solid-svg-icons";
-import IMakeThings from "./components/animations/IMakeThings";
-import Footer from "./components/structural/Footer";
-import ImageInfoPanel from "./components/structural/ImageInfoPanel";
-import Gudetama from "./components/animations/Gudetama";
+// import IMakeThings from "./components/animations/IMakeThings";
+// import Footer from "./components/structural/Footer";
+// import ImageInfoPanel from "./components/structural/ImageInfoPanel";
+// import Gudetama from "./components/animations/Gudetama";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import MiscProjectsPanel from "./components/structural/MiscProjectsPanel";
+// import MiscProjectsPanel from "./components/structural/MiscProjectsPanel";
+
+
+
+const NavBar = React.lazy(() => import('./components/navigation/NavBar'));
+const WoahYouGoBigGuy = React.lazy(() => import('./components/animations/WoahYouGoBigGuy'));
+const Gudetama = React.lazy(() => import('./components/animations/Gudetama'));
+const IMakeThings = React.lazy(() => import('./components/animations/IMakeThings'));
+const Footer = React.lazy(() => import('./components/structural/Footer'));
+const MiscProjectsPanel = React.lazy(() => import('./components/structural/MiscProjectsPanel'));
+const ImageInfoPanel = React.lazy(() => import('./components/structural/ImageInfoPanel'));
 
 const App = () => {
   const { minimalMode } = usePortfolioContext();
