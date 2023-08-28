@@ -25,69 +25,6 @@ const MiscProjectsPanel = () => {
   };
 
   return (
-    // <section id="Misc" className="mt-5">
-    //   <div className="container py-4 py-xl-5">
-    //     <div className="row row-cols-1">
-    //       <div
-    //         className="col d-flex flex-column justify-content-center p-4 rounded"
-    //         data-aos="zoom-in"
-    //         style={styles.textPanel}
-    //       >
-    //         <div className="container">
-    //           <div className="justify-content-between d-flex">
-    //             <button
-    //               className="btn btn-primary btn-light"
-    //               type="button"
-    //               onClick={() => {
-    //                 setVisibleSection(visibleSection === "gallery" ? "" : "gallery");
-    //               }}
-    //               data-toggle="collapse"
-    //               aria-expanded="false"
-    //             >
-    //               {visibleSection === "gallery" ? "Close" : "Gallery"}
-    //             </button>
-    //             <button
-    //               className="btn btn-primary btn-light"
-    //               type="button"
-    //               onClick={() => {
-    //                 setVisibleSection(visibleSection === "web" ? "" : "web");
-    //               }}
-    //               data-toggle="collapse"
-    //               aria-expanded="false"
-    //             >
-    //               {visibleSection === "web" ? "Close" : "Web Apps"}
-    //             </button>
-    //           </div>
-    //           <div className="row">
-    //             <div
-    //               className={`${
-    //                 visibleSection === "gallery" ? "" : "collapse"
-    //               } multi-collapse`}
-    //             >
-    //               {visibleSection === "gallery" ? (
-    //                 <MiscProjectsItem>
-    //                   <Gallery />
-    //                 </MiscProjectsItem>
-    //               ) : null}
-    //             </div>
-    //             <div
-    //               className={`${
-    //                 visibleSection === "web" ? "" : "collapse"
-    //               } multi-collapse`}
-    //             >
-    //               {visibleSection === "web" ? (
-    //                 <MiscProjectsItem animation="zoom-in">
-    //                   <UnderConstruction />
-    //                 </MiscProjectsItem>
-    //               ) : null}
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </section>
-
     <section id="Misc" className="mt-5">
       <div className="container py-4 xl:py-5 mx-auto">
         <div className="row row-cols-1">

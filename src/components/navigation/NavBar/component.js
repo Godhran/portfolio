@@ -9,15 +9,21 @@ const nav = ({ minimalMode, className, children }) => (
 
 const linkText = ({ minimalMode, className, href, children }) => (
   <a href={href} className={`flex items-center ${className}`}>
-    {/* <img
-      src="https://flowbite.com/docs/images/logo.svg"
-      class="h-8 mr-3"
-      alt="Flowbite Logo"
-    /> */}
-    <span class="self-center text-2xl font-semibold whitespace-nowrap">
+    <span className="self-center text-2xl font-semibold whitespace-nowrap">
       {children}
     </span>
   </a>
+);
+
+const link = ({ className, href, children, minimalMode }) => (
+  <li>
+    <a
+      className={`block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 font-bold font-display lowercase ${className}`}
+      href={href}
+    >
+      {children}
+    </a>
+  </li>
 );
 
 const toggleText = ({ minimalMode, className, copy, onClick }) => (
@@ -25,21 +31,29 @@ const toggleText = ({ minimalMode, className, copy, onClick }) => (
     {!minimalMode ? (
       <>
         <FontAwesomeIcon icon={faSkull} className={`me-2 ${className}`} />
-        <span className={className}>{copy.disableMinimal}</span>
+        <span
+          className={`py-2 rounded font-display lowercase md:bg-transparent md:p-0 font-bold ${className}`}
+        >
+          {copy.disableMinimal}
+        </span>
         <FontAwesomeIcon icon={faSkull} className={`ms-2 ${className}`} />
       </>
     ) : (
       <>
-        <span className={className}>{copy.enableMinimal}</span>
+        <span
+          className={`py-2 pl-3 rounded font-display lowercase md:bg-transparent md:p-0 font-bold ${className}`}
+        >
+          {copy.enableMinimal}
+        </span>
         <FontAwesomeIcon icon={faQuestion} className={className} />
       </>
     )}
   </span>
 );
 
-const navBarToggler = ({ onClick }) => (
+const navBarToggler = ({ onClick, className }) => (
   <button
-    className="navbar-toggler"
+    className={`navbar-toggler block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 font-bold ${className}`}
     type="button"
     data-toggle="collapse"
     data-target="#navbarText"
@@ -51,11 +65,21 @@ const navBarToggler = ({ onClick }) => (
     <span className="navbar-toggler-icon"></span>
   </button>
 );
+
 export const Nav = styled(nav)`
   background-color: ${(props) =>
     props.minimalMode ? colours.minimal.light : colours.vibrant.light};
 `;
 
+export const Link = styled(link)`
+  color: ${(props) =>
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
+
+  &:hover {
+    color: ${(props) =>
+      props.minimalMode ? colours.minimal.accent : colours.vibrant.b};
+  }
+`;
 
 export const Brand = styled(linkText)`
   color: ${(props) =>

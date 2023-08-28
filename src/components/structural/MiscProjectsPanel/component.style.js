@@ -11,7 +11,7 @@ const button = ({
   start
 }) => (
   <button
-    className={`font-bold py-2 px-4 rounded-full max-w-sm ${start?'justify-self-start':'justify-self-end'} ${className}`}
+    className={`font-bold font-display lowercase py-2 px-4 rounded-full max-w-sm ${start?'justify-self-start':'justify-self-end'} ${className}`}
     onClick={onClick}
     data-toggle={dataToggle}
     aria-expanded={ariaExpanded}
