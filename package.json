@@ -28,9 +28,9 @@
     "serve": "webpack serve --mode development",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "webpack --mode=development",
+    "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
