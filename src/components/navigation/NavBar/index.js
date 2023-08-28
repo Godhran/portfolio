@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { usePortfolioContext } from "../../../context";
-import "./style.css";
-import { faQuestion, faSkull } from "@fortawesome/free-solid-svg-icons";
 import { colours } from "../../../styles/colours";
+import { Brand, MinimalModeToggler, NavBarToggler } from "./component";
 
 const NavBar = () => {
   const { minimalMode, toggleMinimalMode } = usePortfolioContext();
@@ -31,27 +29,10 @@ const NavBar = () => {
       }}
     >
       <div className="container">
-        <a
-          className="navbar-brand"
-          style={{
-            color: minimalMode ? colours.minimal.dark : colours.vibrant.a,
-          }}
-          href="#top"
-        >
+        <Brand minimalMode={minimalMode} href="#top">
           Odhrán
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          onClick={toggleExpanded}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        </Brand>
+        <NavBarToggler onClick={toggleExpanded} />
         <div
           className={`${
             expanded ? "" : "collapse"
@@ -82,35 +63,11 @@ const NavBar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <span className="nav-link toggle" onClick={toggleMinimalMode}>
-                {!minimalMode ? (
-                  <>
-                    <FontAwesomeIcon
-                      icon={faSkull}
-                      color={colours.vibrant.b}
-                      className="me-2"
-                    />
-                    <span style={{ color: colours.vibrant.b }}>
-                      {copy.disableMinimal}
-                    </span>
-                    <FontAwesomeIcon
-                      icon={faSkull}
-                      color={colours.vibrant.b}
-                      className="ms-2"
-                    />
-                  </>
-                ) : (
-                  <>
-                    <span style={{ color: colours.minimal.accent }}>
-                      {copy.enableMinimal}
-                    </span>
-                    <FontAwesomeIcon
-                      icon={faQuestion}
-                      color={colours.minimal.accent}
-                    />
-                  </>
-                )}
-              </span>
+              <MinimalModeToggler
+                minimalMode={minimalMode}
+                copy={copy}
+                onClick={toggleMinimalMode}
+              />
             </li>
           </ul>
         </div>

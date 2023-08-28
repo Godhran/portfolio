@@ -1,58 +1,43 @@
 import React from "react";
 import { usePortfolioContext } from "../../../context";
-import { colours } from "../../../styles/colours";
-import "./style.css";
+import { MovingText, Svg, SymbolText } from "./component";
+
+const copy = {
+  iMake: "I MAKE",
+  things: "THINGS",
+};
 
 const IMakeThings = () => {
-  const { minimalMode, toggleMinimalMode } = usePortfolioContext();
-
-  const styles = {
-    first: {
-      stroke: !minimalMode ? colours.vibrant.a : colours.minimal.dark,
-    },
-    second: {
-      stroke: !minimalMode ? colours.vibrant.b : colours.minimal.dark,
-    },
-    third: {
-      stroke: !minimalMode ? colours.vibrant.c : colours.minimal.dark,
-    },
-  };
+  const { minimalMode } = usePortfolioContext();
 
   const symbolTextID = "symbolText";
 
   return (
-    <section
-      className="p-3 p-md-5 width-100 mt-5 mt-md-0"
-      data-aos="fade-up"
-      style={styles.section}
-    >
-      <svg viewBox="0 0 1000 400">
+    <section className="p-3 p-md-5 width-100 mt-5 mt-md-0" data-aos="fade-up">
+      <Svg viewBox="0 0 1000 400" maxWidth='1250px'>
         <symbol id={symbolTextID}>
-          <text x="50%" y="40%" className="symbolText">
-            I MAKE
-          </text>
-          <text x="50%" y="80%" className="symbolText">
-            Things
-          </text>
+          <SymbolText message={copy.iMake} x="50%" y="40%" />
+          <SymbolText message={copy.things} x="50%" y="80%" />
         </symbol>
+
         <g>
-          <use
-            xlinkHref={`#${symbolTextID}`}
-            className="animatedText"
-            style={styles.first}
+          <MovingText
+            minimalMode={minimalMode}
+            symbolTextID={symbolTextID}
+            first
           />
-          <use
-            xlinkHref={`#${symbolTextID}`}
-            className="animatedText"
-            style={styles.second}
+          <MovingText
+            minimalMode={minimalMode}
+            symbolTextID={symbolTextID}
+            second
           />
-          <use
-            xlinkHref={`#${symbolTextID}`}
-            className="animatedText"
-            style={styles.third}
+          <MovingText
+            minimalMode={minimalMode}
+            symbolTextID={symbolTextID}
+            third
           />
         </g>
-      </svg>
+      </Svg>
     </section>
   );
 };

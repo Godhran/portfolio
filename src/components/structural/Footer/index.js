@@ -1,65 +1,37 @@
 import React from "react";
 import { usePortfolioContext } from "../../../context";
-import { colours } from "../../../styles/colours";
-import "./style.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Social, CopyrightText, LinkText } from "./components";
 
-const Footer = ({ title, skills, button, onClick }) => {
+const Footer = () => {
   const { minimalMode } = usePortfolioContext();
-
-  const styles = {
-    text: {
-      color: !minimalMode ? colours.vibrant.a : colours.minimal.dark,
-    },
-    link: {
-      color: !minimalMode ? colours.vibrant.dark : colours.minimal.accent,
-    },
-  };
 
   const github = "https://github.com/Godhran";
   const linkedIn = "https://uk.linkedin.com/in/odhran-gormley";
 
   return (
     <section id="Socials">
-      <footer className="text-center text-white">
+      <footer className="text-center">
         <div className="container pt-4">
           <section className="mb-4">
-            <a
-              className="btn btn-link btn-floating btn-lg text-dark m-1"
+            <Social
               href={linkedIn}
-              role="button"
-              data-mdb-ripple-color="dark"
-            >
-              <FontAwesomeIcon
-                icon={["fab", ["linkedin"]]}
-                color={minimalMode ? colours.minimal.dark : colours.vibrant.a}
-                className="ms-2 mx-3"
-                size="2x"
-              />
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-dark m-1"
+              icon={["fab", ["linkedin"]]}
+              minimalMode={minimalMode}
+            />
+            <Social
               href={github}
-              role="button"
-              data-mdb-ripple-color="dark"
-            >
-              <FontAwesomeIcon
-                icon={["fab", ["github"]]}
-                color={minimalMode ? colours.minimal.dark : colours.vibrant.a}
-                className="ms-2 mx-3"
-                onClick={() => (window.location.href = github)}
-                size="2x"
-              />
-            </a>
+              icon={["fab", ["github"]]}
+              minimalMode={minimalMode}
+            />
           </section>
         </div>
 
-        <div className="text-center p-3" style={styles.text}>
+        <CopyrightText minimalMode={minimalMode}>
           {"© 2023 Copyright "}
-          <a style={styles.link} href="https://www.godhran.com/">
+          <LinkText href="https://www.godhran.com/" minimalMode={minimalMode}>
             Odhrán
-          </a>
-        </div>
+          </LinkText>
+        </CopyrightText>
       </footer>
     </section>
   );
