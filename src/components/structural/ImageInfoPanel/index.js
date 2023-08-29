@@ -28,7 +28,7 @@ const ImageInfoPanel = ({
             <>
               <div
                 data-aos={stationary ? "none" : "fade-right"}
-                className="col flex flex-wrap content-center"
+                className="col order-first aos-init aos-animate"
               >
                 {animation}
               </div>
