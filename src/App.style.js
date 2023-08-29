@@ -19,4 +19,5 @@ export const Main = styled(main)`
     text-align: center;
     min-height: 100vh;
     overflow: hidden;
+    font-family: 'Noto Sans';
 `;
