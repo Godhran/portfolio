@@ -1,3 +1,4 @@
+import React from 'react';
 import "./App.css";
 import NavBar from "./components/navigation/NavBar";
 import WoahYouGoBigGuy from "./components/animations/WoahYouGoBigGuy";
