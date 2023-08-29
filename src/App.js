@@ -1,20 +1,19 @@
-import React from 'react';
-import "./App.css";
-import NavBar from "./components/navigation/NavBar";
-import WoahYouGoBigGuy from "./components/animations/WoahYouGoBigGuy";
-import { usePortfolioContext } from "./context";
-import { colours } from "./styles/colours";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faSkull } from "@fortawesome/free-solid-svg-icons";
-import IMakeThings from "./components/animations/IMakeThings";
-import Footer from "./components/structural/Footer";
-import ImageInfoPanel from "./components/structural/ImageInfoPanel";
-import Gudetama from "./components/animations/Gudetama";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import React, { useEffect } from 'react';
+import "./App.css";
+import { Main } from './App.style';
+import Gudetama from "./components/animations/Gudetama";
+import IMakeThings from "./components/animations/IMakeThings";
+import WoahYouGoBigGuy from "./components/animations/WoahYouGoBigGuy";
+import NavBar from "./components/navigation/NavBar";
+import Footer from "./components/structural/Footer";
+import ImageInfoPanel from "./components/structural/ImageInfoPanel";
 import MiscProjectsPanel from "./components/structural/MiscProjectsPanel";
+import { usePortfolioContext } from "./context";
 
 const App = () => {
   const { minimalMode } = usePortfolioContext();
@@ -23,21 +22,11 @@ const App = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const styles = {
-    main: {
-      textAlign: "center",
-      backgroundColor: minimalMode
-        ? colours.minimal.light
-        : colours.vibrant.light,
-      minHeight: "100vh",
-      overflow: "hidden",
-    },
-  };
 
   library.add(fab, faSkull);
 
   return (
-    <main style={styles.main}>
+    <Main minimalMode={minimalMode}>
       <NavBar />
       <ImageInfoPanel
         animation={<WoahYouGoBigGuy />}
@@ -132,7 +121,7 @@ const App = () => {
       <IMakeThings />
       <MiscProjectsPanel />
       <Footer />
-    </main>
+    </Main>
   );
 };
 

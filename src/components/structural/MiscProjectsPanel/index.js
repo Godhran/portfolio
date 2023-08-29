@@ -57,30 +57,6 @@ const MiscProjectsPanel = () => {
                 >
                   {visibleSection === "web" ? "Close" : "Web Apps"}
                 </RoundedButton>
-                {/* <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full max-w-sm justify-self-start"
-                  type="button"
-                  onClick={() => {
-                    setVisibleSection(
-                      visibleSection === "gallery" ? "" : "gallery"
-                    );
-                  }}
-                  data-toggle="collapse"
-                  aria-expanded="false"
-                >
-                  {visibleSection === "gallery" ? "Close" : "Gallery"}
-                </button>
-                <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full max-w-xl justify-self-end"
-                  type="button"
-                  onClick={() => {
-                    setVisibleSection(visibleSection === "web" ? "" : "web");
-                  }}
-                  data-toggle="collapse"
-                  aria-expanded="false"
-                >
-                  {visibleSection === "web" ? "Close" : "Web Apps"}
-                </button> */}
               </div>
               <div className="row">
                 <div

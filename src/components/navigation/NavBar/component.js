@@ -4,7 +4,7 @@ import { faSkull, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const nav = ({ minimalMode, className, children }) => (
-  <nav className={className}>{children}</nav>
+  <nav className={`sticky top-0 ${className}`}>{children}</nav>
 );
 
 const linkText = ({ minimalMode, className, href, children }) => (
