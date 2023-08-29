@@ -9,6 +9,7 @@ const ImageInfoPanel = ({
   content,
   header,
   section,
+  stationary,
 }) => {
   const { minimalMode } = usePortfolioContext();
 
@@ -26,14 +27,14 @@ const ImageInfoPanel = ({
           {!rightToLeft ? (
             <>
               <div
-                data-aos="fade-right"
+                data-aos={stationary ? "none" : "fade-right"}
                 className="col flex flex-wrap content-center"
               >
                 {animation}
               </div>
               <div
                 className="col flex flex-wrap content-evenly p-8 md:rounded content-evenly justify-items-center"
-                data-aos="fade-left"
+                data-aos={stationary ? "none" : "fade-left"}
                 style={styles.textPanel}
               >
                 {header ? (
@@ -56,6 +57,7 @@ const ImageInfoPanel = ({
                           <div className="bs-icon-md bs-icon-rounded bs-icon-primary flex flex-wrap justify-content-center align-items-center d-inline-block mb-3 bs-icon md">
                             {skills.map((skill) => (
                               <IconButton
+                                key={`skill_icon_${skill}`}
                                 isLink={!!links[skill]}
                                 skill={skill}
                                 minimalMode={minimalMode}
@@ -81,7 +83,7 @@ const ImageInfoPanel = ({
             <>
               <div
                 className="col flex flex-wrap content-evenly p-8 md:rounded content-evenly justify-items-center"
-                data-aos="fade-right"
+                data-aos={stationary ? "none" : "fade-right"}
                 style={styles.textPanel}
               >
                 {header ? (
@@ -105,6 +107,7 @@ const ImageInfoPanel = ({
                         <div className="bs-icon-md bs-icon-rounded bs-icon-primary flex flex-wrap justify-content-center align-items-center d-inline-block mb-3 bs-icon md">
                           {skills.map((skill) => (
                             <IconButton
+                              key={`skill_icon_${skill}`}
                               isLink={!!links[skill]}
                               skill={skill}
                               minimalMode={minimalMode}
@@ -126,7 +129,7 @@ const ImageInfoPanel = ({
 
               <div
                 className="col order-first md:order-last"
-                data-aos="fade-left"
+                data-aos={stationary ? "none" : "fade-left"}
               >
                 {animation}
               </div>
