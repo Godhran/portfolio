@@ -32,7 +32,6 @@ export const SymbolText = styled(svgText)`
   text-transform: lowercase;
   font-size: 9em;
   font-weight: bold;
-  font-display: swap;
 `;
 
 export const MovingText = styled(svgUse)`

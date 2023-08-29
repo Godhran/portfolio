@@ -87,14 +87,12 @@ export const Brand = styled(linkText)`
   font-family: "Major Mono Display", monospace;
   text-transform: lowercase;
   font-weight: bold;
-  font-display: swap;
 `;
 
 export const NavBarToggler = styled(navBarToggler)`
   font-family: "Major Mono Display", monospace;
   text-transform: lowercase;
   font-weight: bold;
-  font-display: swap;
 `;
 
 export const MinimalModeToggler = styled(toggleText)`

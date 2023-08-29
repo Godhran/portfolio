@@ -20,5 +20,5 @@ export const Main = styled(main)`
     min-height: 100vh;
     overflow: hidden;
     font-family: 'Noto Sans';
-    font-display: swap;
+    
 `;
