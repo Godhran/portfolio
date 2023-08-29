@@ -4,7 +4,7 @@ import { faSkull, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const nav = ({ minimalMode, className, children }) => (
-  <nav className={`sticky top-0 ${className}`}>{children}</nav>
+  <nav className={`sticky top-0   ${className}`}>{children}</nav>
 );
 
 const linkText = ({ minimalMode, className, href, children }) => (
@@ -87,12 +87,14 @@ export const Brand = styled(linkText)`
   font-family: "Major Mono Display", monospace;
   text-transform: lowercase;
   font-weight: bold;
+  font-display: swap;
 `;
 
 export const NavBarToggler = styled(navBarToggler)`
   font-family: "Major Mono Display", monospace;
   text-transform: lowercase;
   font-weight: bold;
+  font-display: swap;
 `;
 
 export const MinimalModeToggler = styled(toggleText)`

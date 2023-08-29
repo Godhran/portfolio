@@ -14,6 +14,7 @@ const Section = ({ title, skills, button, onClick }) => {
       fontFamily: "Major Mono Display",
       textTransform: "lowercase",
       fontWeight: "bold",
+      fontDisplay: "swap",
     },
     arch: {
       backgroundColor: minimalMode
@@ -30,7 +31,9 @@ const Section = ({ title, skills, button, onClick }) => {
     <>
       <section className="width-100" style={styles.section} id={title}>
         <div
-          className={`curved-wrapper ${minimalMode ? "straight" : "curved-bottom"}`}
+          className={`curved-wrapper ${
+            minimalMode ? "straight" : "curved-bottom"
+          }`}
           style={styles.arch}
         />
 
@@ -56,7 +59,9 @@ const Section = ({ title, skills, button, onClick }) => {
           ) : null}
         </div>
         <div
-          className={`curved-wrapper ${minimalMode ? "straight" : "curved-top"}`}
+          className={`curved-wrapper ${
+            minimalMode ? "straight" : "curved-top"
+          }`}
           style={styles.arch}
         />
       </section>

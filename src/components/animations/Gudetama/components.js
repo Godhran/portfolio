@@ -112,19 +112,11 @@ const svgGroup = ({
   onClick,
 }) =>
   isAnimated ? (
-    <animated.g
-      className={className}
-      transform={transform}
-      onClick={onClick}
-    >
+    <animated.g className={className} transform={transform} onClick={onClick}>
       {children}
     </animated.g>
   ) : (
-    <g
-      className={className}
-      transform={transform}
-      onClick={onClick}
-    >
+    <g className={className} transform={transform} onClick={onClick}>
       {children}
     </g>
   );
@@ -147,6 +139,7 @@ export const Pah = styled(svgText)`
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-display: swap;
 `;
 
 export const Shadow = styled(svgEllipse)`
@@ -166,6 +159,7 @@ export const CurvedText = styled(svgCurvedText)`
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-display: swap;
 `;
 
 export const Yolk = styled(svgPath)`
