@@ -30,7 +30,6 @@ const App = () => {
       <NavBar />
       <ImageInfoPanel
         animation={<WoahYouGoBigGuy />}
-        stationary={true}
         section='About'
         rightToLeft={false}
         content={[
@@ -81,7 +80,6 @@ const App = () => {
       />
       <ImageInfoPanel
         animation={<Gudetama />}
-        stationary={true}
         header={"Recent Projects"}
         rightToLeft={true}
         section='Projects'
