@@ -19,7 +19,7 @@ const Link = ({ className, children, href, minimalMode }) => (
 
 export const LinkText = styled(Link)`
   color: ${(props) =>
-    props.minimalMode ? colours.minimal.accent : colours.vibrant.a};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
 
   &:hover {
     color: ${(props) =>
@@ -27,10 +27,11 @@ export const LinkText = styled(Link)`
   }
 `;
 
-const SocialsLink = ({ className, href, icon, minimalMode }) => (
+const SocialsLink = ({ className, href, icon, minimalMode, label }) => (
   <a
     className="btn btn-link btn-floating btn-lg text-dark m-1"
     href={href}
+    aria-label={label}
     role="button"
   >
     <FontAwesomeIcon

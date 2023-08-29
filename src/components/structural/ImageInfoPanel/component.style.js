@@ -19,9 +19,11 @@ const panel = ({
 const iconButton = ({ isLink, skill, minimalMode, href, className }) => {
   const colour = minimalMode ? colours.minimal.light : colours.vibrant.light;
 
+  const label = skill === "android" ? "Google Play Store" : "Apple App Store";
+
   if (isLink) {
     return (
-      <a href={href}>
+      <a href={href} aria-label={label} role="button">
         <FontAwesomeIcon
           icon={["fab", [skill]]}
           className={`ms-2 mx-3 ${className}`}
@@ -47,7 +49,6 @@ export const Panel = styled(panel)`
   color: ${(props) =>
     props.minimalMode ? colours.minimal.light : colours.vibrant.light};
 `;
-
 
 export const IconButton = styled(iconButton)`
   color: ${(props) =>

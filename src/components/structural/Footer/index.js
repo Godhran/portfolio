@@ -17,11 +17,13 @@ const Footer = () => {
               href={linkedIn}
               icon={["fab", ["linkedin"]]}
               minimalMode={minimalMode}
+              label={'Linked In'}
             />
             <Social
               href={github}
               icon={["fab", ["github"]]}
               minimalMode={minimalMode}
+              label={'Git Hub'}
             />
           </section>
         </div>
