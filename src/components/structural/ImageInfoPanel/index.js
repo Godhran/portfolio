@@ -27,8 +27,8 @@ const ImageInfoPanel = ({
           {!rightToLeft ? (
             <>
               <div
+                className="col order-first"
                 data-aos={stationary ? "none" : "fade-right"}
-                className="col order-first aos-init aos-animate"
               >
                 {animation}
               </div>

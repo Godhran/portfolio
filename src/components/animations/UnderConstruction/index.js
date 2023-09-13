@@ -1,7 +1,6 @@
+import { useSpring } from "@react-spring/web";
 import React from "react";
 import { usePortfolioContext } from "../../../context";
-import { colours } from "../../../styles/colours";
-import { useSpring } from "@react-spring/web";
 import { Divider, TickerText, WarningBar } from "./component";
 
 const copy = {
@@ -10,25 +9,6 @@ const copy = {
 
 const UnderConstruction = () => {
   const { minimalMode } = usePortfolioContext();
-
-  const styles = {
-    textPanel: {
-      backgroundColor: !minimalMode ? colours.vibrant.a : colours.minimal.dark,
-      color: !minimalMode ? colours.vibrant.light : colours.minimal.light,
-    },
-    link: {
-      color: !minimalMode ? colours.vibrant.f : colours.minimal.accent,
-    },
-    warningBar: {
-      fill: !minimalMode ? colours.vibrant.d : colours.minimal.accent,
-    },
-    messageHeaders: {
-      fill: !minimalMode ? colours.vibrant.light : colours.minimal.light,
-    },
-    message: {
-      fill: !minimalMode ? colours.vibrant.c : colours.minimal.light,
-    },
-  };
 
   const textStart = 750;
   const textEnd = -300;
@@ -43,7 +23,7 @@ const UnderConstruction = () => {
   }));
 
   return (
-    <svg viewBox="0 0 1500 750">
+    <svg viewBox="0 0 1500 750" className='w-full max-w-[500px] mx-auto'>
       <g transform="scale(3.7795276)">
         <g>
           <WarningBar
@@ -85,7 +65,6 @@ const UnderConstruction = () => {
           y={115}
           fontSize={50}
           textAnchor="middle"
-          style={styles.message}
           fontWeight={"bolder"}
         />
       </g>

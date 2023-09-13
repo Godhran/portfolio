@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import SISU from "../../../assets/projects/SISU_FULL.png";
 import { usePortfolioContext } from "../../../context";
 import { colours } from "../../../styles/colours";
 import Gallery from "../Gallery";
-import UnderConstruction from "../../animations/UnderConstruction";
 import MiscProjectsItem from "../MiscProjectItem";
+import ProjectButton from "../ProjectButton";
 import { RoundedButton } from "./component.style";
 
 const MiscProjectsPanel = () => {
@@ -33,7 +34,7 @@ const MiscProjectsPanel = () => {
             style={styles.textPanel}
           >
             <div className="container">
-              <div className="grid grid-cols-2 gap-2 place-content-between">
+              <div className="grid grid-cols-2   gap-2 place-content-between">
                 <RoundedButton
                   onClick={() => {
                     setVisibleSection(
@@ -76,9 +77,23 @@ const MiscProjectsPanel = () => {
                   } multi-collapse`}
                 >
                   {visibleSection === "web" ? (
-                    <MiscProjectsItem animation="zoom-in">
-                      <UnderConstruction />
-                    </MiscProjectsItem>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 place-items-center justify-center mt-5">
+                      <ProjectButton
+                        image={SISU}
+                        title={"SISU"}
+                        description={"Stick with something, see it through."}
+                        url={"https://sisu.godhran.com/"}
+                        skills={[
+                          "react",
+                          "html",
+                          "js",
+                          "css",
+                          "github",
+                          "cloudflare",
+                        ]}
+                      />
+                      <ProjectButton underConstruction />
+                    </div>
                   ) : null}
                 </div>
               </div>

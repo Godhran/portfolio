@@ -8,4 +8,6 @@ export const skillIcons = {
   android: ['fab', 'android'],
   photoshop: ['fab', 'photoshop'],
   illustrator: ['fab', 'illustrator'],
+  github: ['fab', 'github'],
+  cloudflare: ['fab', 'cloudflare'],
 };
