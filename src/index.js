@@ -1,8 +1,12 @@
-import React from 'react';
+import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { PortfolioProvider } from "./context";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faSkull } from "@fortawesome/free-solid-svg-icons";
+library.add(fab, faSkull);
 
 const root = createRoot(document.getElementById("root"));
 root.render(

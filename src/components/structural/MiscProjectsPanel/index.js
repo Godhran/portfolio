@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SISU from "../../../assets/projects/SISU_FULL.png";
+import DCODE from "../../../assets/projects/DCODE_FULL.png";
 import { usePortfolioContext } from "../../../context";
 import { colours } from "../../../styles/colours";
 import Gallery from "../Gallery";
@@ -83,6 +84,20 @@ const MiscProjectsPanel = () => {
                         title={"SISU"}
                         description={"Stick with something, see it through."}
                         url={"https://sisu.godhran.com/"}
+                        skills={[
+                          "react",
+                          "html",
+                          "js",
+                          "css",
+                          "github",
+                          "cloudflare",
+                        ]}
+                      />{" "}
+                      <ProjectButton
+                        image={DCODE}
+                        title={"DCODE"}
+                        description={"Guess the secret word"}
+                        url={"https://dcode.godhran.com/"}
                         skills={[
                           "react",
                           "html",
