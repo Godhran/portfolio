@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d27fe6c6.css",
-    "main.js": "/static/js/main.553b5164.js",
+    "main.js": "/static/js/main.02e8b873.js",
     "static/media/23.png": "/static/media/23.3d53591c3dca22a55300.png",
     "static/media/22.png": "/static/media/22.11f357aeaec94a050c11.png",
     "static/media/detective pikachu.png": "/static/media/detective pikachu.58cc1dfc0ea48653b7bf.png",
@@ -28,10 +28,10 @@
     "static/media/4.jpg": "/static/media/4.fe955561c08081f28eff.jpg",
     "index.html": "/index.html",
     "main.d27fe6c6.css.map": "/static/css/main.d27fe6c6.css.map",
-    "main.553b5164.js.map": "/static/js/main.553b5164.js.map"
+    "main.02e8b873.js.map": "/static/js/main.02e8b873.js.map"
   },
   "entrypoints": [
     "static/css/main.d27fe6c6.css",
-    "static/js/main.553b5164.js"
+    "static/js/main.02e8b873.js"
   ]
 }
