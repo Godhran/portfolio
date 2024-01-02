@@ -14,16 +14,15 @@ const ProjectButton = ({
   underConstruction,
 }) => {
   const { minimalMode } = usePortfolioContext();
-
+console.log({skills})
   if (underConstruction) {
     return (
       <Wrapper minimalMode={minimalMode}>
-        <div className="mb-3">
+        <h3 className={"font-display text-xl lowercase font-bold"}>{"More to come"}</h3>
         <UnderConstruction />
+        <div className="inline-block italic">
+          {"This section is getting more added to it as projects are cooked up"}
         </div>
-
-        <h5 className={"font-display lowercase font-bold"}>{'More to come'}</h5>
-        <div className="inline-block italic">{'This section is getting more added to it as projects are cooked up'}</div>
       </Wrapper>
     );
   }
@@ -31,19 +30,21 @@ const ProjectButton = ({
   return (
     <Wrapper minimalMode={minimalMode}>
       <a href={url}>
-        <img class="h-auto max-w-50" src={image} alt={`${title} logo`} />
+        <img className="h-auto max-w-50" src={image} alt={`${title} logo`} />
       </a>
       <h5 className={"font-display lowercase font-bold"}>{title}</h5>
-      <div className="inline-block italic">{description}</div>
-      {skills.map((skill) => (
-        <FontAwesomeIcon
-          key={`skill_${skill}`}
-          icon={skillIcons[skill]}
-          color={minimalMode ? colours.minimal.dark : colours.vibrant.d}
-          className="ms-2 mx-3 mt-3"
-          size="2x"
-        />
-      ))}
+      <p className="inline-block italic">{description}</p>
+      <div>
+        {skills.map((skill) => (
+          <FontAwesomeIcon
+            key={`skill_${skill}`}
+            icon={skillIcons[skill]}
+            color={minimalMode ? colours.minimal.dark : colours.vibrant.d}
+            className="ms-2 mx-3 mt-3"
+            size="2x"
+          />
+        ))}
+      </div>
     </Wrapper>
   );
 };

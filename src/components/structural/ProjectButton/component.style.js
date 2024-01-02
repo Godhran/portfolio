@@ -3,7 +3,7 @@ import { colours } from "../../../styles/colours";
 
 const wrapper = ({ className, children }) => (
   <div
-    className={`mx-auto max-w rounded overflow-hidden shadow-lg p-4 h-full drop-shadow-md bg-white m-3 ${className}`}
+    className={`mx-auto max-w rounded overflow-hidden shadow-lg p-4 h-full drop-shadow-md bg-white m-3 flex flex-col justify-between ${className}`}
   >
     {children}
   </div>

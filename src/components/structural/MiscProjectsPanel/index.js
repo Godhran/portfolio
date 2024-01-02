@@ -105,6 +105,7 @@ const MiscProjectsPanel = () => {
                           "css",
                           "github",
                           "cloudflare",
+                          "api",
                         ]}
                       />
                       <ProjectButton underConstruction />

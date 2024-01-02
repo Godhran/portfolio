@@ -1,3 +1,6 @@
+
+import { faServer } from '@fortawesome/free-solid-svg-icons'
+
 export const skillIcons = {
   html: ['fab', 'html5'],
   css: ['fab', 'css3'],
@@ -10,4 +13,5 @@ export const skillIcons = {
   illustrator: ['fab', 'illustrator'],
   github: ['fab', 'github'],
   cloudflare: ['fab', 'cloudflare'],
+  api: faServer,
 };
