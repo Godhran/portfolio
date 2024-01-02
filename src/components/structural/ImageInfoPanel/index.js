@@ -3,16 +3,24 @@ import { usePortfolioContext } from "../../../context";
 import { colours } from "../../../styles/colours";
 import { IconButton } from "./component.style";
 
+const testIds = {
+  SectionContainer: "section-container",
+  AnimationContainer: "animation-container",
+  InformationContainer: "information-container",
+  LeftToRightContainer: "left-to-right-container",
+  RightToLeftContainer: "right-to-left-container",
+};
+
 const ImageInfoPanel = ({
-  rightToLeft,
+  rightToLeft = false,
   animation,
   content,
   header,
   section,
   stationary,
+  testId = "image-info-panel",
 }) => {
   const { minimalMode } = usePortfolioContext();
-
   const styles = {
     textPanel: {
       backgroundColor: !minimalMode ? colours.vibrant.a : colours.minimal.dark,
@@ -21,14 +29,19 @@ const ImageInfoPanel = ({
   };
 
   return (
-    <section id={section} className="mt-5">
+    <section
+      id={section}
+      className="mt-5"
+      data-testid={`${testId}-${testIds.SectionContainer}`}
+    >
       <div className="container py-4 py-xl-5 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {!rightToLeft ? (
-            <>
+            <div data-testid={`${testId}-${testIds.LeftToRightContainer}`}>
               <div
                 className="col order-first"
                 data-aos={stationary ? "none" : "fade-right"}
+                data-testid={`${testId}-${testIds.AnimationContainer}`}
               >
                 {animation}
               </div>
@@ -36,6 +49,7 @@ const ImageInfoPanel = ({
                 className="col flex flex-wrap content-evenly p-8 md:rounded content-evenly justify-items-center"
                 data-aos={stationary ? "none" : "fade-left"}
                 style={styles.textPanel}
+                data-testid={`${testId}-${testIds.InformationContainer}`}
               >
                 {header ? (
                   <div
@@ -78,13 +92,14 @@ const ImageInfoPanel = ({
                   </div>
                 ))}
               </div>
-            </>
+            </div>
           ) : (
-            <>
+            <div data-testid={`${testId}-${testIds.RightToLeftContainer}`}>
               <div
                 className="col flex flex-wrap content-evenly p-8 md:rounded content-evenly justify-items-center"
                 data-aos={stationary ? "none" : "fade-right"}
                 style={styles.textPanel}
+                data-testid={`${testId}-${testIds.InformationContainer}`}
               >
                 {header ? (
                   <div
@@ -130,10 +145,11 @@ const ImageInfoPanel = ({
               <div
                 className="col order-first md:order-last"
                 data-aos={stationary ? "none" : "fade-left"}
+                data-testid={`${testId}-${testIds.AnimationContainer}`}
               >
                 {animation}
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>
