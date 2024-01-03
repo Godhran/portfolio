@@ -39,10 +39,10 @@ export const WarningBar = styled(svgPath)`
 
 export const Divider = styled(svgPath)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.light};
+    props.minimalMode ? colours.minimal.light : colours.vibrant.light};
 `;
 
 export const TickerText = styled(svgAnimatedText)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.c};
+    props.minimalMode ? colours.minimal.light : colours.vibrant.c};
 `;
