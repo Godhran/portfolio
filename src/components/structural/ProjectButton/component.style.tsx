@@ -6,11 +6,13 @@ type Props = {
   className?: string;
   children: ReactNode;
   minimalMode: boolean;
+  testId: string;
 };
 
-const wrapper = ({ className, children }: Props) => (
+const wrapper = ({ className, children, testId }: Props) => (
   <div
     className={`mx-auto max-w rounded overflow-hidden shadow-lg p-4 h-full drop-shadow-md bg-white m-3 flex flex-col justify-between ${className}`}
+    data-testid={testId}
   >
     {children}
   </div>

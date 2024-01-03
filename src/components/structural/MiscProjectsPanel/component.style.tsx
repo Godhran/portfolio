@@ -10,6 +10,7 @@ type ButtonProps = {
   dataToggle: string;
   ariaExpanded: boolean;
   justifyStart?: boolean;
+  testId?: string;
 };
 
 type PanelProps = {
@@ -25,6 +26,7 @@ const button = ({
   dataToggle,
   ariaExpanded,
   justifyStart,
+  testId,
 }: ButtonProps) => (
   <button
     className={`font-bold font-display lowercase py-2 px-4 rounded-full max-w-sm ${
@@ -33,6 +35,7 @@ const button = ({
     onClick={onClick}
     data-toggle={dataToggle}
     aria-expanded={ariaExpanded}
+    data-testid={testId}
   >
     {children}
   </button>

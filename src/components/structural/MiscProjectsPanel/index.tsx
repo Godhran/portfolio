@@ -9,6 +9,15 @@ import ProjectButton from "../ProjectButton";
 import { RoundedButton } from "./component.style";
 import UnderConstruction from "../../animations/UnderConstruction";
 
+const testIds = {
+  GalleryButton: "misc-projects-panel-gallery-button",
+  WebButton: "misc-projects-panel-web-button",
+  ImageGallery: "misc-projects-panel-image-gallery",
+  WebProjects: "misc-projects-panel-web-projects",
+};
+
+const copy = { close: "Close", gallery: "Gallery", web: "Web Apps" };
+
 const MiscProjectsPanel = () => {
   const { minimalMode } = usePortfolioContext();
   const [visibleSection, setVisibleSection] = useState("");
@@ -40,46 +49,48 @@ const MiscProjectsPanel = () => {
                 <RoundedButton
                   onClick={() => {
                     setVisibleSection(
-                      visibleSection === "gallery" ? "" : "gallery"
+                      visibleSection === copy.gallery ? "" : copy.gallery
                     );
                   }}
                   dataToggle="collapse"
                   ariaExpanded={false}
                   minimalMode={minimalMode}
+                  testId={testIds.GalleryButton}
                   justifyStart
                 >
-                  {visibleSection === "gallery" ? "Close" : "Gallery"}
+                  {visibleSection === copy.gallery ? copy.close : copy.gallery}
                 </RoundedButton>
                 <RoundedButton
                   onClick={() => {
-                    setVisibleSection(visibleSection === "web" ? "" : "web");
+                    setVisibleSection(visibleSection === copy.web ? "" : copy.web);
                   }}
                   dataToggle="collapse"
                   ariaExpanded={false}
                   minimalMode={minimalMode}
+                  testId={testIds.WebButton}
                 >
-                  {visibleSection === "web" ? "Close" : "Web Apps"}
+                  {visibleSection === copy.web ? copy.close : copy.web}
                 </RoundedButton>
               </div>
               <div className="row">
                 <div
                   className={`${
-                    visibleSection === "gallery" ? "" : "collapse"
+                    visibleSection === copy.gallery ? "" : "collapse"
                   } multi-collapse`}
                 >
-                  {visibleSection === "gallery" ? (
-                    <MiscProjectsItem>
+                  {visibleSection === copy.gallery ? (
+                    <MiscProjectsItem testId={testIds.ImageGallery}>
                       <Gallery />
                     </MiscProjectsItem>
                   ) : null}
                 </div>
                 <div
                   className={`${
-                    visibleSection === "web" ? "" : "collapse"
+                    visibleSection === copy.web ? "" : "collapse"
                   } multi-collapse`}
                 >
-                  {visibleSection === "web" ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 place-items-center justify-center mt-5">
+                  {visibleSection === copy.web ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 place-items-center justify-center mt-5" data-testid={testIds.WebProjects}>
                       <ProjectButton
                         image={SISU}
                         title={"SISU"}
