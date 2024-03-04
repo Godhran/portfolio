@@ -19,6 +19,12 @@ type IconButtonProps = {
   skill: IconName;
 };
 
+type HeaderProps = {
+  minimalMode: boolean;
+  className?: string;
+  text: string;
+};
+
 const panel = ({
   minimalMode,
   children,
@@ -66,6 +72,15 @@ const iconButton = ({
   );
 };
 
+const header = ({
+  text,
+  className,
+}: HeaderProps) => (
+  <h4 className={`text-xl font-display lowercase font-bold ${className}`}>
+    {text}
+  </h4>
+);
+
 export const Panel = styled(panel)`
   background-color: ${(props) =>
     props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
@@ -74,6 +89,11 @@ export const Panel = styled(panel)`
 `;
 
 export const IconButton = styled(iconButton)`
+  color: ${(props) =>
+    props.minimalMode ? colours.minimal.accent : colours.vibrant.c};
+`;
+
+export const Header = styled(header)`
   color: ${(props) =>
     props.minimalMode ? colours.minimal.accent : colours.vibrant.c};
 `;

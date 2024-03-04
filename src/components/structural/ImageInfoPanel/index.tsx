@@ -1,7 +1,7 @@
 import React from "react";
 import { usePortfolioContext } from "../../../context";
 import { colours } from "../../../styles/colours";
-import { IconButton } from "./component.style";
+import { Header, IconButton } from "./component.style";
 import { IconName } from "@fortawesome/free-solid-svg-icons";
 
 const testIds = {
@@ -65,7 +65,7 @@ const ImageInfoPanel = ({
           </div>
           <div
             className={`grid grid-rows-0 md:grid-rows-${
-              !!header ? content.length+1 : content.length
+              !!header ? content.length + 1 : content.length
             } grid-flow-row gap-0 flex align-content-center items-center`}
             data-aos={
               isAnimated ? (rightToLeft ? "fade-right" : "fade-left") : "none"
@@ -74,9 +74,9 @@ const ImageInfoPanel = ({
           >
             {header ? (
               <div
-                className={`text-center text-md-start col flex flex-wrap place-items-center md:place-items-start mb-5 md:mb-0`}
+                className={`text-center text-md-start col flex flex-wrap place-items-center md:place-items-start mb-5 md:mb-0 mx-auto md:mx-0`}
               >
-                <h4 className="text-xl font-display lowercase">{header}</h4>
+                <Header minimalMode={minimalMode} text={header} />
               </div>
             ) : null}
             {content.map(({ title, skills, body, links }, index) => (
@@ -87,9 +87,9 @@ const ImageInfoPanel = ({
                 style={styles.textPanel}
                 key={`content_${index}`}
               >
-                <div>
+                <>
                   {skills ? (
-                    <div className="bs-icon-md bs-icon-rounded bs-icon-primary flex flex-wrap justify-content-center align-items-center d-inline-block mb-3 bs-icon md">
+                    <div className="bs-icon-md bs-icon-rounded bs-icon-primary md:flex flex-wrap justify-content-center align-items-center d-inline-block mb-3 bs-icon md">
                       {skills.map((skill: string) => (
                         <IconButton
                           key={`skill_icon_${skill}`}
@@ -103,7 +103,7 @@ const ImageInfoPanel = ({
                       ))}
                     </div>
                   ) : null}
-                </div>
+                </>
                 <div className="place-items-center md:place-items-start text-center md:text-left">
                   <h4 className="text-xl inline-block font-display lowercase">
                     {title}
