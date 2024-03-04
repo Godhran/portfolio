@@ -17,7 +17,7 @@ const IMakeThings = () => {
       className="p-3 p-md-5 max-width-full mt-5 mt-md-0"
       data-aos="fade-up"
     >
-      <svg viewBox="0 0 1000 400" className="w-full max-w-[1250px]-mx-auto">
+      <svg viewBox="0 0 1000 400" className="w-full max-w-[1250px]-mx-auto select-none">
         <symbol id={symbolTextID}>
           <SymbolText message={copy.iMake} x="50%" y="40%" />
           <SymbolText message={copy.things} x="50%" y="80%" />
