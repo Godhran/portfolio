@@ -47,14 +47,10 @@ describe("ImageInfoPanel", () => {
         copy.sectionID
       );
       expect(
-        screen.getByTestId(
-          `${testIds.AnimationContainer}-${testIds.LeftToRight}`
-        )
+        screen.getByTestId(`${testIds.AnimationContainer}`)
       ).toBeInTheDocument();
       expect(
-        screen.getByTestId(
-          `${testIds.InformationContainer}-${testIds.LeftToRight}`
-        )
+        screen.getByTestId(`${testIds.InformationContainer}`)
       ).toBeInTheDocument();
       expect(screen.getByText(copy.sectionHeader)).toBeInTheDocument();
     });
@@ -74,16 +70,12 @@ describe("ImageInfoPanel", () => {
                 <ImageInfoPanel {...testProps} rightToLeft={true} />
               </PortfolioProvider>
             );
+            expect(screen.getByTestId(testIds.AnimationContainer)).toHaveClass(
+              "order-last"
+            );
             expect(
-              screen.getByTestId(
-                `${testIds.AnimationContainer}-${testIds.RightToLeft}`
-              )
-            ).toBeInTheDocument();
-            expect(
-              screen.getByTestId(
-                `${testIds.InformationContainer}-${testIds.RightToLeft}`
-              )
-            ).toBeInTheDocument();
+              screen.getByTestId(testIds.AnimationContainer)
+            ).not.toHaveClass("order-first");
           });
         });
 
@@ -94,59 +86,47 @@ describe("ImageInfoPanel", () => {
                 <ImageInfoPanel {...testProps} rightToLeft={false} />
               </PortfolioProvider>
             );
+            expect(screen.getByTestId(testIds.AnimationContainer)).toHaveClass(
+              "order-first"
+            );
             expect(
-              screen.getByTestId(
-                `${testIds.AnimationContainer}-${testIds.LeftToRight}`
-              )
-            ).toBeInTheDocument();
-            expect(
-              screen.getByTestId(
-                `${testIds.InformationContainer}-${testIds.LeftToRight}`
-              )
-            ).toBeInTheDocument();
+              screen.getByTestId(testIds.AnimationContainer)
+            ).not.toHaveClass("order-last");
           });
         });
       });
+    });
 
-      describe("isAnimated", () => {
-        describe("Enabled", () => {
-          test("Should render the components without an animation", () => {
-            render(
-              <PortfolioProvider>
-                <ImageInfoPanel {...testProps} isAnimated={true} />
-              </PortfolioProvider>
-            );
-            expect(
-              screen.getByTestId(
-                `${testIds.AnimationContainer}-${testIds.LeftToRight}`
-              )
-            ).toHaveAttribute("data-aos", "fade-right");
-            expect(
-              screen.getByTestId(
-                `${testIds.InformationContainer}-${testIds.LeftToRight}`
-              )
-            ).toHaveAttribute("data-aos", "fade-left");
-          });
+    describe("isAnimated", () => {
+      describe("Enabled", () => {
+        test("Should render the components without an animation", () => {
+          render(
+            <PortfolioProvider>
+              <ImageInfoPanel {...testProps} isAnimated={true} />
+            </PortfolioProvider>
+          );
+          expect(
+            screen.getByTestId(testIds.AnimationContainer)
+          ).toHaveAttribute("data-aos", "fade-right");
+          expect(
+            screen.getByTestId(testIds.InformationContainer)
+          ).toHaveAttribute("data-aos", "fade-left");
         });
+      });
 
-        describe("Disabled", () => {
-          test("Should render the components with an animation", () => {
-            render(
-              <PortfolioProvider>
-                <ImageInfoPanel {...testProps} isAnimated={false} />
-              </PortfolioProvider>
-            );
-            expect(
-              screen.getByTestId(
-                `${testIds.AnimationContainer}-${testIds.LeftToRight}`
-              )
-            ).toHaveAttribute("data-aos", "none");
-            expect(
-              screen.getByTestId(
-                `${testIds.InformationContainer}-${testIds.LeftToRight}`
-              )
-            ).toHaveAttribute("data-aos", "none");
-          });
+      describe("Disabled", () => {
+        test("Should render the components with an animation", () => {
+          render(
+            <PortfolioProvider>
+              <ImageInfoPanel {...testProps} isAnimated={false} />
+            </PortfolioProvider>
+          );
+          expect(
+            screen.getByTestId(testIds.AnimationContainer)
+          ).toHaveAttribute("data-aos", "none");
+          expect(
+            screen.getByTestId(testIds.InformationContainer)
+          ).toHaveAttribute("data-aos", "none");
         });
       });
     });
