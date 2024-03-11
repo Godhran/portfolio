@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { colours } from "../../../styles/colours";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconName } from "@fortawesome/free-brands-svg-icons";
+import { skillDescriptions } from "../Section/skills";
 
 type PanelProps = {
   minimalMode: boolean;
@@ -57,6 +58,7 @@ const iconButton = ({
           icon={["fab", skill]}
           className={`ms-2 mx-3 ${className}`}
           size="2x"
+          title={skillDescriptions[skill]}
         />
       </a>
     );
@@ -65,6 +67,7 @@ const iconButton = ({
   return (
     <FontAwesomeIcon
       icon={["fab", skill]}
+      title={skillDescriptions[skill]}
       color={colour}
       className={`ms-2 mx-3`}
       size="2x"
@@ -72,10 +75,7 @@ const iconButton = ({
   );
 };
 
-const header = ({
-  text,
-  className,
-}: HeaderProps) => (
+const header = ({ text, className }: HeaderProps) => (
   <h4 className={`text-xl font-display lowercase font-bold ${className}`}>
     {text}
   </h4>

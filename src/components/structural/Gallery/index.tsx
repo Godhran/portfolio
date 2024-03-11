@@ -88,7 +88,7 @@ const Gallery = ({ animation = "fade-up" }: Props) => {
         {galleryImages.map((image, index) => {
           const { src, altText } = image;
           return (
-            <div className="mb-3">
+            <div className="mb-3" key={`gallery_image_${index}`}>
               <a href={src}>
                 <img
                   className="img-fluid rounded"

@@ -2,7 +2,7 @@ import React from "react";
 import { usePortfolioContext } from "../../../context";
 import { colours } from "../../../styles/colours";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { skillIcons } from "./skillIcons";
+import { skillDescriptions, skillIcons } from "./skills";
 
 const Section = ({ title, skills, button, onClick }) => {
   const { minimalMode } = usePortfolioContext();
@@ -41,15 +41,16 @@ const Section = ({ title, skills, button, onClick }) => {
           <h2 style={styles.h2}>{title}</h2>
           <div className="my-3 my-md-5">
             {skills.map((skill) => (
-              <FontAwesomeIcon
-                key={`skill_${skill}`}
-                icon={skillIcons[skill]}
-                color={
-                  minimalMode ? colours.minimal.light : colours.vibrant.light
-                }
-                className="ms-2 mx-3"
-                size="2x"
-              />
+                <FontAwesomeIcon
+                  key={`skill_${skill}`}
+                  icon={skillIcons[skill]}
+                  color={
+                    minimalMode ? colours.minimal.light : colours.vibrant.light
+                  }
+                  className="ms-2 mx-3"
+                  size="2x"
+                  title={skillDescriptions[skill]}
+                />
             ))}
           </div>
           {button ? (

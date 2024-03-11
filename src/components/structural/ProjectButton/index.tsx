@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { usePortfolioContext } from "../../../context";
 import { Wrapper } from "./component.style";
 import { colours } from "../../../styles/colours";
-import { skillIcons } from "../Section/skillIcons";
+import { skillDescriptions, skillIcons } from "../Section/skills";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 type Props = {
@@ -64,11 +64,12 @@ const ProjectButton = ({
           <div
             className="ms-2 mx-3 mt-3"
             data-testid={`${testId}-${testIds.SkillIcon}-${skill}`}
+            key={`${title}_skill_${skill}`}
           >
             <FontAwesomeIcon
-              key={`skill_${skill}`}
               icon={skillIcons[skill] as IconProp}
               color={minimalMode ? colours.minimal.dark : colours.vibrant.d}
+              title={skillDescriptions[skill]}
               size="2x"
             />
           </div>
