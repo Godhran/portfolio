@@ -92,7 +92,9 @@ const Gudetama = () => {
   };
 
   return (
-    <svg viewBox="0 0 1500 1500" className="max-h-screen mx-auto">
+    <svg viewBox="0 0 1500 1500" className="max-h-screen mx-auto" 
+    data-aos="fade-up"
+    >
       <defs>
         <path
           id="topTextPath"

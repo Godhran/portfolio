@@ -42,7 +42,7 @@ const MiscProjectsPanel = () => {
         <div className="row row-cols-1">
           <div
             className="col flex flex-col justify-content-center p-4 md:rounded"
-            data-aos="zoom-in"
+            data-aos="fade-up"
             style={styles.textPanel}
           >
             <div className="container">
