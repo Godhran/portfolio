@@ -138,9 +138,9 @@ export const ChopSticks = styled(svgGroup)``;
 export const Pah = styled(svgText)`
   font-family: "Knewave";
   stroke: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.b};
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.light : colours.vibrant.light};
+    props.minimalMode ? colours.minimal.light : colours.vibrant.c};
   stroke-width: 10;
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -157,9 +157,9 @@ export const Shadow = styled(svgEllipse)`
 export const CurvedText = styled(svgCurvedText)`
   font-family: "Knewave";
   stroke: ${(props) =>
-    props.minimalMode ? colours.minimal.light : colours.vibrant.e};
+    props.minimalMode ? colours.minimal.light : colours.vibrant.d};
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.f};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.e};
   stroke-width: 10;
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -170,9 +170,9 @@ export const CurvedText = styled(svgCurvedText)`
 
 export const Yolk = styled(svgPath)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.accent : colours.vibrant.f};
+    props.minimalMode ? colours.minimal.accent : colours.vibrant.e};
   stroke: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.e};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.d};
   stroke-width: 21.2598;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -203,6 +203,6 @@ export const ChopStick = styled(svgPolygon)`
 
 export const FacialFeature = styled(svgEllipse)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.e};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.d};
   cursor: pointer;
 `;

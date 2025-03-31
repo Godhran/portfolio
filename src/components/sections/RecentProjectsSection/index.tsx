@@ -1,6 +1,6 @@
 import React from "react";
-import Gudetama from "../../animations/Gudetama";
 import ImageInfoPanel from "../../structural/ImageInfoPanel";
+import WoahYouGoBigGuy from "../../animations/WoahYouGoBigGuy";
 
 const copy = {
   header: "Recent Projects",
@@ -49,7 +49,7 @@ const content: Content[] = [
 const ReactProjectsSection = () => {
   return (
     <ImageInfoPanel
-      animation={<Gudetama />}
+      animation={<WoahYouGoBigGuy />}
       header={copy.header}
       rightToLeft={true}
       section={section}

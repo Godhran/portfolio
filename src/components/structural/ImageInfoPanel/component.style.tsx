@@ -95,5 +95,5 @@ export const IconButton = styled(iconButton)`
 
 export const Header = styled(header)`
   color: ${(props) =>
-    props.minimalMode ? colours.minimal.accent : colours.vibrant.c};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
 `;

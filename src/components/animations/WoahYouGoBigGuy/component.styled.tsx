@@ -60,22 +60,24 @@ export const Text = styled(svgGroup)``;
 
 export const Character = styled(svgPath)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.f};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.b};
 `;
 
 export const Head = styled(svgEllipse)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.accent : colours.vibrant.c};
+    props.minimalMode ? colours.minimal.accent : colours.vibrant.light};
+  stroke: ${(props) =>
+    props.minimalMode ? colours.minimal.accent : colours.vibrant.d};
 `;
 
 export const Shading = styled(svgPath)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.c};
 `;
 
 export const Hair = styled(svgPath)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.dark};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.d};
 `;
 
 export const Teeth = styled(svgPath)`
@@ -85,16 +87,16 @@ export const Teeth = styled(svgPath)`
 
 export const Skin = styled(svgPath)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.light : colours.vibrant.c};
+    props.minimalMode ? colours.minimal.light : colours.vibrant.light};
 `;
 export const SkinAlt = styled(svgPolygon)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.light : colours.vibrant.c};
+    props.minimalMode ? colours.minimal.light : colours.vibrant.light};
 `;
 
 export const Lines = styled(svgPath)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.dark};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
 `;
 
 export const Eyes = styled(svgPath)`

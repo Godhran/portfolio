@@ -29,8 +29,8 @@ const Footer = () => {
         </div>
 
         <CopyrightText minimalMode={minimalMode}>
-          {"© 2024 Copyright "}
-          <LinkText href="https://www.godhran.com/" minimalMode={minimalMode}>
+          {"© 2025 Copyright "}
+          <LinkText href="https://www.odhran.fun/" minimalMode={minimalMode}>
             Odhrán
           </LinkText>
         </CopyrightText>

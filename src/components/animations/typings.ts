@@ -28,6 +28,7 @@ export type SVGPathProps = {
   className?: string;
   d: string;
   minimalMode: boolean;
+  offset?:{x:number,y:number}
 };
 export type SVGPolygonProps = {
   className?: string;

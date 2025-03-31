@@ -38,7 +38,7 @@ const MiscProjectsPanel = () => {
 
   return (
     <section id="Misc" className="mt-5">
-      <div className="container py-4 xl:py-5 mx-auto">
+      <div className="container mx-auto">
         <div className="row row-cols-1">
           <div
             className="col flex flex-col justify-content-center p-4 md:rounded"

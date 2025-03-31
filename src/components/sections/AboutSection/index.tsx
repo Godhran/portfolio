@@ -1,6 +1,6 @@
 import React from "react";
-import WoahYouGoBigGuy from "../../animations/WoahYouGoBigGuy";
 import ImageInfoPanel from "../../structural/ImageInfoPanel";
+import SelfPortrait from "../../animations/SelfPortrait";
 
 const copy = {
   iDo: "I do",
@@ -43,6 +43,8 @@ const iDabble = [
   "Lottie",
   "AfterEffects",
   "Aesprite",
+  "Godot",
+  "Blender",
 ];
 const section = "About";
 const join = " ~ ";
@@ -50,7 +52,7 @@ const join = " ~ ";
 const AboutSection = () => {
   return (
     <ImageInfoPanel
-      animation={<WoahYouGoBigGuy />}
+      animation={<SelfPortrait />}
       rightToLeft={false}
       section={section}
       content={[
