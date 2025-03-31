@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://www.godhran.com",
+  "homepage": "http://www.odhran.fun",
   "dependencies": {
     "@emotion/css": "^11.11.2",
     "@emotion/styled": "^11.11.0",

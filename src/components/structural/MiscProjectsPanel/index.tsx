@@ -96,7 +96,7 @@ const MiscProjectsPanel = () => {
                         image={SISU}
                         title={"SISU"}
                         description={"Stick with something, see it through."}
-                        url={"https://sisu.godhran.com/"}
+                        url={"https://sisu.odhran.fun/"}
                         skills={[
                           "react",
                           "html",
@@ -110,7 +110,7 @@ const MiscProjectsPanel = () => {
                         image={DCODE}
                         title={"DCODE"}
                         description={"Guess the secret word"}
-                        url={"https://dcode.godhran.com/"}
+                        url={"https://dcode.odhran.fun/"}
                         skills={[
                           "react",
                           "html",
@@ -125,7 +125,7 @@ const MiscProjectsPanel = () => {
                         image={EMOJO}
                         title={"eMojo"}
                         description={"Work out the mystery movie"}
-                        url={"https://emojo.godhran.com/"}
+                        url={"https://emojo.odhran.fun/"}
                         skills={[
                           "react",
                           "html",

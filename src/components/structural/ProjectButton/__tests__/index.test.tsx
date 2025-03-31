@@ -15,7 +15,7 @@ const testIds = {
 
 const testProps = {
   skills: ["react", "html", "js"],
-  url: "www.godhran.com",
+  url: "www.odhran.fun",
   description: "Test Description",
   title: "Test Title",
   image: SISU,
