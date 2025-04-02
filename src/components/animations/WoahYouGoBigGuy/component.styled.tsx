@@ -116,5 +116,5 @@ export const Secondary = styled(svgPolygon)`
 
 export const Bangle = styled(svgPolygon)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.accent : colours.vibrant.f};
+    props.minimalMode ? colours.minimal.accent : colours.vibrant.e};
 `;

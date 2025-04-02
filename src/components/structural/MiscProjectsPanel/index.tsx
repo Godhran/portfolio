@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import SISU from "../../../assets/projects/SISU_FULL.png";
 import DCODE from "../../../assets/projects/DCODE_FULL.png";
 import EMOJO from "../../../assets/projects/EMOJO_FULL.png";
+import SISU from "../../../assets/projects/SISU_FULL.png";
 import { usePortfolioContext } from "../../../context";
 import { colours } from "../../../styles/colours";
+import UnderConstruction from "../../animations/UnderConstruction";
 import Gallery from "../Gallery";
 import MiscProjectsItem from "../MiscProjectItem";
 import ProjectButton from "../ProjectButton";
 import { RoundedButton } from "./component.style";
-import UnderConstruction from "../../animations/UnderConstruction";
 
 const testIds = {
   GalleryButton: "misc-projects-panel-gallery-button",
@@ -37,13 +37,16 @@ const MiscProjectsPanel = () => {
   };
 
   return (
-    <section id="Misc" className="mt-5">
+    <section id="Misc" className="mt-5"
+    data-aos="fade-up"
+    >
+      <div className="w-100" 
+            style={styles.textPanel}
+            >
       <div className="container mx-auto">
         <div className="row row-cols-1">
           <div
             className="col flex flex-col justify-content-center p-4 md:rounded"
-            data-aos="fade-up"
-            style={styles.textPanel}
           >
             <div className="container">
               <div className="grid grid-cols-2   gap-2 place-content-between">
@@ -144,6 +147,7 @@ const MiscProjectsPanel = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

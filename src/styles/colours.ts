@@ -7,11 +7,11 @@ export const colours = {
   vibrant: {
     light: "#ffffff",
     dark: "#1e1832",
-    a: "#41bec2",
-    b: "#96e3a5",
-    c: "#d3fda1",
-    d: "#fd9d75",
-    e: "#fdc675",
-    f: "#feaf38",
+    a: "#d08770",
+    b: "#a3be8c",
+    c: "#ebcb8b",
+    d: "#bf616a",
+    e: "#b48ead",
+    f: "#247BA0",
   },
 };

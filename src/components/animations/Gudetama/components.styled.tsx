@@ -138,7 +138,7 @@ export const ChopSticks = styled(svgGroup)``;
 export const Pah = styled(svgText)`
   font-family: "Knewave";
   stroke: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.b};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.d};
   fill: ${(props) =>
     props.minimalMode ? colours.minimal.light : colours.vibrant.c};
   stroke-width: 10;
@@ -159,7 +159,7 @@ export const CurvedText = styled(svgCurvedText)`
   stroke: ${(props) =>
     props.minimalMode ? colours.minimal.light : colours.vibrant.d};
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.e};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
   stroke-width: 10;
   -moz-user-select: none;
   -khtml-user-select: none;
@@ -170,9 +170,9 @@ export const CurvedText = styled(svgCurvedText)`
 
 export const Yolk = styled(svgPath)`
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.accent : colours.vibrant.e};
+    props.minimalMode ? colours.minimal.accent : colours.vibrant.c};
   stroke: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.d};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
   stroke-width: 21.2598;
   stroke-linecap: round;
   stroke-linejoin: round;

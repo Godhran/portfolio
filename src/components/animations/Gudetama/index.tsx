@@ -30,7 +30,8 @@ const Gudetama = () => {
 
   const rockingAngle = 5;
   const shadowDisplace = 80;
-  const chopSticksCoordinates = { x: 400, y: 400 };
+  const chopSticksLocationCoordinates = { x: 300, y: 400 };
+  const chopSticksPokeCoordinates = { x: -400, y: -400 };
 
   const [rockGudetama] = useSpring(() => ({
     from: { rotate: -rockingAngle },
@@ -51,10 +52,10 @@ const Gudetama = () => {
   }));
 
   const chopstickAnimationConfig = {
-    from: { x: chopSticksCoordinates.x, y: chopSticksCoordinates.y },
+    from: { x: chopSticksLocationCoordinates.x, y: chopSticksLocationCoordinates.y },
     to: [
-      { x: -chopSticksCoordinates.x, y: -chopSticksCoordinates.y },
-      { x: chopSticksCoordinates.x, y: chopSticksCoordinates.y },
+      { x: chopSticksPokeCoordinates.x, y: chopSticksPokeCoordinates.y },
+      { x: chopSticksLocationCoordinates.x, y: chopSticksLocationCoordinates.y },
     ],
     pause: true,
     config: {
