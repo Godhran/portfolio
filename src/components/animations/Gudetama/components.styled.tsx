@@ -157,9 +157,9 @@ export const Shadow = styled(svgEllipse)`
 export const CurvedText = styled(svgCurvedText)`
   font-family: "Knewave";
   stroke: ${(props) =>
-    props.minimalMode ? colours.minimal.light : colours.vibrant.d};
+    props.minimalMode ? colours.minimal.light : colours.vibrant.a};
   fill: ${(props) =>
-    props.minimalMode ? colours.minimal.dark : colours.vibrant.a};
+    props.minimalMode ? colours.minimal.dark : colours.vibrant.c};
   stroke-width: 10;
   -moz-user-select: none;
   -khtml-user-select: none;

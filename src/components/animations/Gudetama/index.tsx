@@ -105,19 +105,9 @@ const Gudetama = () => {
           id="bottomTextPath"
           d="M88.14,681.2c10.36,941.1,1169.41,753.58,1598.24-88.27"
         />
-
-        <radialGradient id="vignetteGradient" cx="50%" cy="50%" r="75%">
-          <stop offset="0%" stopColor="white" />
-          <stop offset="55%" stopColor="white" />
-          <stop offset="62.5%" stopColor="black" />
-        </radialGradient>
-
-        <mask id="vignetteMask">
-          <rect width="1500" height="1500" fill="url(#vignetteGradient)" />
-        </mask>
       </defs>
 
-      <g mask="url(#vignetteMask)">
+      <g>
         <Shadow
           minimalMode={minimalMode}
           transform={moveShadow.x.to((value) => `translate(${value} 0)`)}
