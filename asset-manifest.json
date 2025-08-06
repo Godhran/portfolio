@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.86f176c5.css",
-    "main.js": "/static/js/main.236fdd25.js",
+    "main.js": "/static/js/main.bc032e85.js",
     "static/media/23.png": "/static/media/23.3d53591c3dca22a55300.png",
     "static/media/22.png": "/static/media/22.11f357aeaec94a050c11.png",
     "static/media/detective pikachu.png": "/static/media/detective pikachu.58cc1dfc0ea48653b7bf.png",
@@ -21,6 +21,7 @@
     "static/media/9.gif": "/static/media/9.945c08073ecd9c0bc3a2.gif",
     "static/media/6.gif": "/static/media/6.958598333b36d2960fb5.gif",
     "static/media/mondocool.png": "/static/media/mondocool.10a888f17c7261e171f1.png",
+    "static/media/BOJJI_FULL.png": "/static/media/BOJJI_FULL.a22db08764cce678c02e.png",
     "static/media/MajorMonoDisplay-Regular.ttf": "/static/media/MajorMonoDisplay-Regular.68a265ac783795c7bcc1.ttf",
     "static/media/5.jpg": "/static/media/5.d8cb694c00a87dbb8697.jpg",
     "static/media/20.jpg": "/static/media/20.2ab7d34c57c1242ca374.jpg",
@@ -29,10 +30,10 @@
     "static/media/4.jpg": "/static/media/4.fe955561c08081f28eff.jpg",
     "index.html": "/index.html",
     "main.86f176c5.css.map": "/static/css/main.86f176c5.css.map",
-    "main.236fdd25.js.map": "/static/js/main.236fdd25.js.map"
+    "main.bc032e85.js.map": "/static/js/main.bc032e85.js.map"
   },
   "entrypoints": [
     "static/css/main.86f176c5.css",
-    "static/js/main.236fdd25.js"
+    "static/js/main.bc032e85.js"
   ]
 }
