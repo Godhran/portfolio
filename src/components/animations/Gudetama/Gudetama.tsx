@@ -98,7 +98,7 @@ export const Gudetama = () => {
     <svg
       viewBox="0 0 1500 1500"
       className="max-h-screen mx-auto"
-      data-aos="fade-up"
+      // data-aos="fade-up"
     >
       <defs>
         <path id="topTextPath" d={topTextPath} />

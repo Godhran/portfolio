@@ -39,18 +39,18 @@ export const AboutMe = ({
         <div className={`grid grid-cols-1 md:grid-cols-2`}>
           <div
             className={`col ${rightToLeft ? "order-last" : "order-first"}`}
-            data-aos={
-              isAnimated ? (rightToLeft ? "fade-left" : "fade-right") : "none"
-            }
+            // data-aos={
+            //   isAnimated ? (rightToLeft ? "fade-left" : "fade-right") : "none"
+            // }
             data-testid={`${aboutMeTestIDs.AnimationContainer}`}
           >
             {animation}
           </div>
           <div
             className={`grid grid-rows-0 md:grid-rows-1 grid-flow-row gap-0 flex align-content-center items-center max-w-xl`}
-            data-aos={
-              isAnimated ? (rightToLeft ? "fade-right" : "fade-left") : "none"
-            }
+            // data-aos={
+            //   isAnimated ? (rightToLeft ? "fade-right" : "fade-left") : "none"
+            // }
             data-testid={`${aboutMeTestIDs.InformationContainer}`}
           >
             {header ? (

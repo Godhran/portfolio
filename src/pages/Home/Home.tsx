@@ -13,9 +13,9 @@ import { AboutMe } from "../../components/sections/AboutMe/AboutMe";
 import { defaultColourScheme } from "../../styles/colours.constants";
 
 export const Home = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({ duration: 1000 });
+  // }, []);
 
   return (
     <div
