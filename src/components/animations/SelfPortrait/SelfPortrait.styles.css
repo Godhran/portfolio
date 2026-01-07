@@ -1,0 +1,9 @@
+.self-portrait {
+  .nose {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+}

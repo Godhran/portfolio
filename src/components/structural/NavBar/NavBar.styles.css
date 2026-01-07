@@ -1,0 +1,18 @@
+Nav {
+  .toggler {
+    font-family: "Major Mono Display", monospace;
+    text-transform: lowercase;
+    font-weight: bold;
+  }
+
+  .toggler-text {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .brand {
+    font-family: "Major Mono Display", monospace;
+    text-transform: lowercase;
+    font-weight: bold;
+  }
+}
