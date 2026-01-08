@@ -140,7 +140,7 @@ export const MobileNavBarToggler = ({
     <button
       data-collapse-toggle="navbar-default"
       type="button"
-      className="inline-flex items-center p-0 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none"
+      className="inline-flex items-center p-0 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none"
       aria-controls="navbar-default"
       aria-expanded={expanded}
       onClick={onClick}

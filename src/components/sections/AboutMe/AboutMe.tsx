@@ -70,7 +70,7 @@ export const AboutMe = ({
                       {framework.map(({ icon, title }, index) => {
                         return (
                           <div
-                            className="me-1 inline-flex text-sm text-gray-800 gap-x-2"
+                            className="me-1 inline-flex text-sm gap-x-2"
                             key={`framework-icon-${index}`}
                           >
                             <SVGIcon icon={icon} />

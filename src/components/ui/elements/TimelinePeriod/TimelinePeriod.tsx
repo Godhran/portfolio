@@ -18,7 +18,7 @@ export const TimelinePeriod = ({
       </div>
       <div className="grow pb-8 group-last:pb-0 px-5">
         <p
-          className="font-semibold text-sm text-gray-800"
+          className="font-semibold text-sm"
           style={{
             fontFamily: "Major Mono Display",
             textTransform: "lowercase",
@@ -27,7 +27,7 @@ export const TimelinePeriod = ({
           {title}
         </p>
 
-        <p className="mt-1 text-sm text-gray-600 italic">{body}</p>
+        <p className="mt-1 text-sm italic">{body}</p>
 
         <div className="flex row gap-4 mt-4 justify-center">
           {links?.apple && (

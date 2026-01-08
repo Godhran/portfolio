@@ -29,7 +29,7 @@ export const WebApps = ({ id }: { id: string }) => {
                 />
                 <div className="grow">
                   <H4 className="text-center">{title}</H4>
-                  <p className="text-xs uppercase text-gray-500 text-center">
+                  <p className="text-xs uppercase text-center">
                     {description}
                   </p>
                 </div>

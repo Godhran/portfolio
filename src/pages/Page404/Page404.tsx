@@ -10,21 +10,26 @@ const dashLength = 121;
 
 export const Page404 = () => {
   return (
-    <div id="app" style={{ backgroundColor: defaultColourScheme.light }}>
+    <div
+      id="app"
+      style={{
+        backgroundColor: defaultColourScheme.light,
+        color: defaultColourScheme.dark,
+      }}
+    >
       <div className="max-w-3xl flex flex-col mx-auto min-h-screen">
         <WhackedOut className="mx-auto" />
 
         <main id="content">
           <div className="text-center mb-10 px-4 sm:px-6 lg:px-8 justify-center items-center flex flex-col">
-            <H3 className="text-7xl font-bold text-gray-800 sm:text-9xl">
-              404
-            </H3>
-            <p className="mt-3 text-gray-600">
-              Oops, you've taken a wrong turn somewhere...
-            </p>
+            <H3 className="text-7xl font-bold sm:text-9xl">404</H3>
+            <p className="mt-3">Oops, you've taken a wrong turn somewhere...</p>
             <div className="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
               <Link to="/">
-                <div className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-black text-white focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none">
+                <div
+                  style={{ backgroundColor: defaultColourScheme.dark }}
+                  className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent text-white focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

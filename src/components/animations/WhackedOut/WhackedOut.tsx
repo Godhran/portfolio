@@ -58,6 +58,7 @@ export const WhackedOut = ({ className = "" }: WhackedOutProps) => {
             (s, r) =>
               `translate(300, 300) scale(${s}) rotate(${r}) translate(-300, -300)`
           )}
+          fill={defaultColourScheme.dark}
         >
           <g>
             <path
@@ -118,7 +119,7 @@ export const WhackedOut = ({ className = "" }: WhackedOutProps) => {
           <g
             id="Me"
             fill={"none"}
-            stroke={"#000"}
+            stroke={defaultColourScheme.dark}
             strokeWidth={7}
             strokeMiterlimit={10}
             strokeLinecap={"round"}

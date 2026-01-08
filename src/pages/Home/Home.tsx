@@ -21,7 +21,10 @@ export const Home = () => {
     <div
       id="app"
       className="pt-5"
-      style={{ backgroundColor: defaultColourScheme.light }}
+      style={{
+        backgroundColor: defaultColourScheme.light,
+        color: defaultColourScheme.dark,
+      }}
     >
       <NavBar />
       <AboutMe animation={<SelfPortrait />} id={"About"} />
