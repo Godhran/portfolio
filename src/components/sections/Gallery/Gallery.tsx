@@ -5,7 +5,7 @@ import { GaleryColumn } from "./Gallery.elements";
 import { H3 } from "../../ui/typography/H3";
 import { SVGIcon } from "../../ui/iconography/SVGIcon/SVGIcon";
 
-export const MasonryGallery = ({ id }: { id: string }) => {
+export const MasonryGallery = React.memo(({ id }: { id: string }) => {
   const length = galleryImages.length;
   const images = shuffle(galleryImages);
 
@@ -39,4 +39,4 @@ export const MasonryGallery = ({ id }: { id: string }) => {
       )}
     </section>
   );
-};
+});

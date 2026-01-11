@@ -12,7 +12,6 @@ import {
   Shell,
   Yolk,
 } from "./Gudetama.elements";
-import "./Gudetama.styles.css";
 import { copy } from "./Gudetama.copy";
 
 export const Gudetama = () => {

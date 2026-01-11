@@ -15,11 +15,11 @@ export const Footer = () => {
               icon={'linkedIn'}
               label={"Linked In"}
             />
-            <SocialsLink
+            {/* <SocialsLink
               href={github}
               icon={'github'}
               label={"Git Hub"}
-            />
+            /> */}
           </section>
         </div>
 

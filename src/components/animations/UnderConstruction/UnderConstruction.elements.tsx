@@ -1,16 +1,13 @@
 import React from "react";
 import { animated } from "@react-spring/web";
 import { SVGPathProps, SVGTextProps } from "../animation.types";
-import { usePortfolioStore } from "../../../stores/usePortfolioStore";
 
 export const WarningBar = ({ d }: SVGPathProps) => {
-  const { colourScheme } = usePortfolioStore();
-  return <path d={d} fill={colourScheme.b} />;
+  return <path d={d} fill={"var(--c-b)"} />;
 };
 
 export const Divider = ({ d }: SVGPathProps) => {
-  const { colourScheme } = usePortfolioStore();
-  return <path d={d} fill={colourScheme.dark} />;
+  return <path d={d} fill={"var(--c-dark)"} />;
 };
 
 export const TickerText = ({
@@ -23,7 +20,6 @@ export const TickerText = ({
   fontWeight,
   message,
 }: SVGTextProps) => {
-  const { colourScheme } = usePortfolioStore();
   return (
     <animated.g transform={transform}>
       <text
@@ -33,7 +29,7 @@ export const TickerText = ({
         textAnchor={textAnchor}
         className={className}
         fontWeight={fontWeight}
-        fill={colourScheme.dark}
+        fill={"var(--c-dark)"}
       >
         {message}
       </text>

@@ -26,6 +26,7 @@ export const content: AboutMeContent[] = [
       { title: "Jest", icon: "jest" },
       { title: "Maestro", icon: "maestro" },
       { title: "Detox", icon: "detox" },
+      { title: "GitHub", icon: "github" },
       { title: "React", icon: "react" },
       { title: "NodeJS", icon: "nodejs" },
       { title: "HTML", icon: "html" },

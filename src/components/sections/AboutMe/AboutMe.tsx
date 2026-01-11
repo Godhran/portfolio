@@ -3,6 +3,7 @@ import { content } from "./AboutMe.constants";
 import { SVGIcon } from "../../ui/iconography/SVGIcon/SVGIcon";
 import { H3 } from "../../ui/typography/H3";
 import { aboutMeTestIDs } from "./AboutMe.testIDs";
+import { usePortfolioStore } from "../../../stores/usePortfolioStore";
 
 const testIds = {
   SectionContainer: "section-container",
@@ -26,9 +27,9 @@ export const AboutMe = ({
   animation,
   header,
   id,
-  isAnimated = true,
-  testId = "image-info-panel",
 }: Props) => {
+  const { isRestrictedColourScheme } = usePortfolioStore();
+
   return (
     <section
       id={id}
@@ -62,9 +63,12 @@ export const AboutMe = ({
             ) : null}
 
             <div className="space-y-10 text-left p-5">
-              {content.map(({ title, framework },index) => {
+              {content.map(({ title, framework }, index) => {
                 return (
-                  <div className="flex flex-col xl:flex-row gap-2 justify-between" key={`content-item-${index}`}>
+                  <div
+                    className="flex flex-col xl:flex-row gap-2 justify-between"
+                    key={`content-item-${index}`}
+                  >
                     <h3 className="text-sm font-bold">{title}</h3>
                     <div className="flex max-w-sm w-full flex-wrap gap-x-4 gap-y-3">
                       {framework.map(({ icon, title }, index) => {
@@ -73,7 +77,12 @@ export const AboutMe = ({
                             className="me-1 inline-flex text-sm gap-x-2"
                             key={`framework-icon-${index}`}
                           >
-                            <SVGIcon icon={icon} />
+                            <SVGIcon
+                              icon={icon}
+                              {...(!isRestrictedColourScheme && {
+                                fill: "var(--c-b)",
+                              })}
+                            />
                             <p>{title}</p>
                           </div>
                         );

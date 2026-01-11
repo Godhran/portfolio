@@ -30,18 +30,12 @@ export const RecentProjects = ({
         <div className={`grid grid-cols-1 md:grid-cols-2`}>
           <div
             className={`col ${rightToLeft ? "order-last" : "order-first"}`}
-            // data-aos={
-            //   isAnimated ? (rightToLeft ? "fade-left" : "fade-right") : "none"
-            // }
             data-testid={recentProjectsTestIDs.AnimationContainer}
           >
             {animation}
           </div>
           <div
             className={"flex flex-col gap-0 flex align-content-center p-5"}
-            // data-aos={
-            //   isAnimated ? (rightToLeft ? "fade-right" : "fade-left") : "none"
-            // }
             data-testid={recentProjectsTestIDs.InformationContainer}
           >
             {header ? <H3 className="text-start mb-3">{header}</H3> : null}

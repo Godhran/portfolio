@@ -1,7 +1,5 @@
-import AOS from "aos";
 import "aos/dist/aos.css";
-import React, { useEffect } from "react";
-import Gudetama from "../../components/animations/Gudetama/Gudetama";
+import React from "react";
 import SelfPortrait from "../../components/animations/SelfPortrait/SelfPortrait";
 import WoahYouGoBigGuy from "../../components/animations/WoahYouGoBigGuy/WoahYouGoBigGuy";
 import NavBar from "../../components/structural/NavBar/NavBar";
@@ -10,21 +8,20 @@ import { MasonryGallery } from "../../components/sections/Gallery/Gallery";
 import { RecentProjects } from "../../components/sections/RecentProjects/RecentProjects";
 import { WebApps } from "../../components/sections/WebApps/WebApps";
 import { AboutMe } from "../../components/sections/AboutMe/AboutMe";
-import { defaultColourScheme } from "../../styles/colours.constants";
+import { usePortfolioStore } from "../../stores/usePortfolioStore";
+import { FooterAnimation } from "../../components/sections/FooterAnimation/FooterAnimation";
 
 export const Home = () => {
   // useEffect(() => {
-  //   AOS.init({ duration: 1000 });
+  //   AOS.init({ duration: 1000
   // }, []);
+
+  const colourScheme = usePortfolioStore((s) => s.colourScheme);
 
   return (
     <div
       id="app"
-      className="pt-5"
-      style={{
-        backgroundColor: defaultColourScheme.light,
-        color: defaultColourScheme.dark,
-      }}
+      className="pt-5 bg-[var(--c-light)] text-[var(--c-dark)] min-h-screen"
     >
       <NavBar />
       <AboutMe animation={<SelfPortrait />} id={"About"} />
@@ -36,7 +33,7 @@ export const Home = () => {
       />
       <WebApps id={"WebApps"} />
       <MasonryGallery id={"Gallery"} />
-      <Gudetama />
+      <FooterAnimation />
       <Footer />
     </div>
   );

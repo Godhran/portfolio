@@ -6,8 +6,11 @@ import { title } from "./WebApps.copy";
 import { H3 } from "../../ui/typography/H3";
 import { H4 } from "../../ui/typography/H4";
 import { Link } from "react-router-dom";
+import { usePortfolioStore } from "../../../stores/usePortfolioStore";
 
 export const WebApps = ({ id }: { id: string }) => {
+  const { isRestrictedColourScheme } = usePortfolioStore();
+
   return (
     <section id={id} className="container mx-auto py-5 px-4 xs:px-0">
       <H3>{title}</H3>
@@ -16,7 +19,7 @@ export const WebApps = ({ id }: { id: string }) => {
           return (
             <Link
               to={url}
-              className="flex flex-col rounded-xl p-4 md:p-6 bg-white"
+              className="flex flex-col rounded-xl p-4 md:p-6 bg-white/50"
               target="_blank"
               rel="noreferrer"
               key={title}
@@ -29,15 +32,17 @@ export const WebApps = ({ id }: { id: string }) => {
                 />
                 <div className="grow">
                   <H4 className="text-center">{title}</H4>
-                  <p className="text-xs uppercase text-center">
-                    {description}
-                  </p>
+                  <p className="text-xs uppercase text-center">{description}</p>
                 </div>
               </div>
 
               <div className="mt-3 space-x-1 flex row justify-center gap-x-2">
-                {skills.map((skill,index) => (
-                  <SVGIcon key={`skill-icon-${index}`} icon={skill} />
+                {skills.map((skill, index) => (
+                  <SVGIcon
+                    key={`skill-icon-${index}`}
+                    icon={skill}
+                    fill={isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-b)"}
+                  />
                 ))}
               </div>
             </Link>
@@ -45,7 +50,7 @@ export const WebApps = ({ id }: { id: string }) => {
         })}
 
         <div className="flex items-center gap-x-4">
-          <div className="flex flex-col rounded-xl p-4 md:p-6 bg-white">
+          <div className="flex flex-col rounded-xl p-4 md:p-6 bg-white/50">
             <UnderConstruction />
           </div>
         </div>

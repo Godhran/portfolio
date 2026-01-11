@@ -13,8 +13,9 @@ export const Text = ({
 };
 
 export const Character = ({ d }: { d: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.dark : colourScheme.b;
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-b)";
+
   return <path d={d} fill={fill} />;
 };
 
@@ -31,12 +32,11 @@ export const Head = ({
   ry: number;
   transform?: Interpolation<number, string>;
 }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.a : colourScheme.light;
-  const style = isRestrictedColourScheme
-    ? { strokeWidth: 10, stroke: colourScheme.dark }
-    : { strokeWidth: 10, stroke: colourScheme.d };
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-a)" : "var(--c-light)";
+  const stroke = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-c)";
   const transformProps = !isRestrictedColourScheme ? transform : undefined;
+
   return (
     <animated.ellipse
       cx={cx}
@@ -44,66 +44,69 @@ export const Head = ({
       rx={rx}
       ry={ry}
       fill={fill}
-      style={style}
+      stroke={stroke}
+      strokeWidth={10}
       transform={transformProps}
     />
   );
 };
 
 export const Shading = ({ d }: { d: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.dark : colourScheme.c;
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-c)";
+
   return <path d={d} fill={fill} />;
 };
 
 export const Hair = ({ d }: { d: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.dark : colourScheme.d;
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-c)";
+
   return <path d={d} fill={fill} />;
 };
 
 export const Teeth = ({ d }: { d: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.light : colourScheme.a;
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-light)" : "var(--c-a)";
+
   return <path d={d} fill={fill} />;
 };
 
 export const Skin = ({ d }: { d: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme
-    ? colourScheme.light
-    : colourScheme.light;
+  const fill = "var(--c-light)";
+
   return <path d={d} fill={fill} />;
 };
 
 export const SkinAlt = ({ points }: { points: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme
-    ? colourScheme.light
-    : colourScheme.light;
+  const fill = "var(--c-light)";
+
   return <polygon points={points} fill={fill} />;
 };
 
 export const Lines = ({ d }: { d: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.dark : colourScheme.a;
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-a)";
+
   return <path d={d} fill={fill} />;
 };
 
 export const Main = ({ d }: { d: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.c : colourScheme.c;
+  const fill = "var(--c-c)";
+
   return <path d={d} fill={fill} />;
 };
 
 export const Bangle = ({ points }: { points: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.c : colourScheme.e;
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-c)" : "var(--c-e)";
+
   return <polygon points={points} fill={fill} />;
 };
 
 export const Secondary = ({ points }: { points: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? colourScheme.light : colourScheme.e;
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-light)" : "var(--c-e)";
+
   return <polygon points={points} fill={fill} />;
 };

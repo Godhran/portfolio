@@ -42,5 +42,7 @@ export type SVGIconProps = {
   className?: string;
   style?: React.CSSProperties;
   hasAction?: boolean;
+  hasParentStyle?: boolean;
   fill?: string;
+  hoverFill?: string;
 };

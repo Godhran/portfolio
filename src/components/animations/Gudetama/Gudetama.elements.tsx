@@ -7,10 +7,9 @@ export const Shadow = ({
 }: {
   transform: Interpolation<number, string>;
 }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const style = {
-    fill: isRestrictedColourScheme ? colourScheme.dark : colourScheme.b,
-  };
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-b)";
+
   return (
     <animated.ellipse
       cx={666.72}
@@ -19,7 +18,7 @@ export const Shadow = ({
       ry={50}
       className={"shadow"}
       transform={transform}
-      style={style}
+      fill={fill}
     />
   );
 };
@@ -41,25 +40,47 @@ export const Character = ({
 };
 
 export const Yolk = ({ d, highlight }: { d: string; highlight?: boolean }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
+  const { isRestrictedColourScheme } = usePortfolioStore();
   const style = highlight
     ? {
-        fill: colourScheme.light,
+        fill: "var(--c-light)",
       }
     : {
-        stroke: isRestrictedColourScheme ? colourScheme.dark : colourScheme.a,
-        fill: isRestrictedColourScheme ? colourScheme.c : colourScheme.c,
+        stroke: isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-a)",
+        fill: isRestrictedColourScheme ? "var(--c-c)" : "var(--c-c)",
       };
-  return <animated.path className={"yolk"} d={d} style={style} />;
+
+  return (
+    <animated.path
+      strokeWidth={22}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeMiterlimit={10}
+      className={"cursor-pointer"}
+      d={d}
+      {...style}
+    />
+  );
 };
 
 export const Shell = ({ d }: { d: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
+  const { isRestrictedColourScheme } = usePortfolioStore();
   const style = {
-    stroke: isRestrictedColourScheme ? colourScheme.dark : colourScheme.a,
-    fill: colourScheme.light,
+    stroke: isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-a)",
+    fill: "var(--c-light)",
   };
-  return <animated.path d={d} className={"shell"} style={style} />;
+
+  return (
+    <animated.path
+      d={d}
+      className={"shell"}
+      {...style}
+      strokeWidth={22}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeMiterlimit={10}
+    />
+  );
 };
 
 export const FacialFeature = ({
@@ -75,10 +96,9 @@ export const FacialFeature = ({
   ry: number;
   transform: string;
 }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const style = {
-    fill: isRestrictedColourScheme ? colourScheme.dark : colourScheme.d,
-  };
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-d)";
+
   return (
     <animated.ellipse
       cx={cx}
@@ -86,8 +106,8 @@ export const FacialFeature = ({
       rx={rx}
       ry={ry}
       transform={transform}
-      className={"facial-feature"}
-      style={style}
+      className={"cursor-pointer"}
+      fill={fill}
     />
   );
 };
@@ -107,12 +127,11 @@ export const ChopSticks = ({
 };
 
 export const ChopStick = ({ points }: { points: string }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const style = {
-    fill: isRestrictedColourScheme ? colourScheme.dark : colourScheme.a,
-  };
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-a)";
+
   return (
-    <animated.polygon points={points} className="chop-sticks" style={style} />
+    <animated.polygon points={points} className="chop-sticks" fill={fill} />
   );
 };
 
@@ -131,7 +150,10 @@ export const CurvedText = ({
   duration: number;
   top?: boolean;
 }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-light)" : "var(--c-c)";
+  const stroke = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-a)";
+
   const textPathProps = top
     ? {
         textLength: "60%",
@@ -149,18 +171,16 @@ export const CurvedText = ({
         begin: "topTextPathAnimation.end",
       };
 
-  const style = {
-    fill: isRestrictedColourScheme ? colourScheme.light : colourScheme.c,
-    stroke: isRestrictedColourScheme ? colourScheme.dark : colourScheme.a,
-  };
-
   return (
     <text>
       <textPath
         href={href}
         fontSize={150}
         startOffset={startOffset}
-        style={style}
+        fill={fill}
+        stroke={stroke}
+        fontFamily={"Knewave"}
+        strokeWidth={10}
         {...textPathProps}
       >
         {message}
@@ -188,18 +208,20 @@ export const Pah = ({
   opacity: SpringValue<number>;
   message: string;
 }) => {
-  const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
-  const style = {
-    stroke: isRestrictedColourScheme ? colourScheme.dark : colourScheme.a,
-    fill: isRestrictedColourScheme ? colourScheme.light : colourScheme.c,
-  };
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const fill = isRestrictedColourScheme ? "var(--c-light)" : "var(--c-c)";
+  const stroke = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-a)";
+
   return (
     <animated.text
       transform={transform}
-      className={"text"}
+      fontFamily={"Knewave"}
+      strokeWidth={10}
+      className={"select-none"}
       opacity={opacity}
       scale={scale}
-      style={style}
+      fill={fill}
+      stroke={stroke}
       fontSize={150}
       x={550}
       y={550}

@@ -6,7 +6,7 @@ export const defaultColourScheme: ColourScheme = {
   light,
   dark,
   a: "#ffcd75",
-  b: "#ffcd75",
+  b: dark,
   c: "#ffcd75",
   d: "#ffcd75",
   e: "#ffcd75",
@@ -45,8 +45,55 @@ const alternativeScheme3: ColourScheme = {
   f: "#000",
 };
 
+const gameBoyScheme: ColourScheme = {
+light:"#eeffcc",
+dark:"#112318",
+a:"#1e3a29",
+b:"#305d42",
+c:"#4d8061",
+d:"#89a257",
+e:"#bedc7f",
+f:"#eeffcc"
+}
+
+// const gameboyScheme2: ColourScheme = {
+// light,
+// dark,
+// a:"#39809c",
+// b:"#28375b",
+// c:"#5fcc86  ",
+// d:"#fff37b",
+// e:"#fff37b",
+// f:"#fff37b"
+// };
+
+const altScheme: ColourScheme = {
+  light:"#2f2f4b",
+  dark:"#ede1c7",
+  a:"#d17f74",
+  b:"#d8b887",
+  c:"#d17f74",
+  d:"#d8b887",
+  e:"#ede1c7",
+  f:"#ede1c7",
+}
+
+const googleScheme: ColourScheme = {
+  light,
+  dark,
+  b:"#d74430",
+  a:"#000000",
+  d:"#ffbb05",
+  c:"#049956",
+  f:"#176eee",
+  e:"#ffffff",
+}
+
 export const vibrantColourSchemes: ColourScheme[] = [
+  googleScheme,
   alternativeScheme,
   alternativeScheme2,
-  // alternativeScheme3,
+  gameBoyScheme,
+  alternativeScheme3,
+  altScheme
 ];

@@ -72,18 +72,19 @@ export const Link = ({ href, children }: LinkProps) => {
 
 export const ToggleText = ({ className, copy, onClick }: ToggleTextProps) => {
   const { colourScheme, isRestrictedColourScheme } = usePortfolioStore();
+
   if (isRestrictedColourScheme) {
     return (
       <span
-        className="nav-link toggle cursor-pointer"
+        className="nav-link toggle cursor-pointer hover:text-[var(--c-c)] hover:!fill-[var(--c-c)]"
         role="button"
         onClick={onClick}
       >
         <span
-          className={`py-2 pl-3 rounded font-display lowercase md:bg-transparent md:p-0 font-bold toggler-text flex flex-row items-center`}
+          className={`py-2 pl-3 rounded font-display lowercase md:bg-transparent md:p-0 font-bold toggler-text flex flex-row items-center hover:!text-[var(--c-c)]`}
         >
           {copy.enableMinimal}
-          <SVGIcon icon="questionMark" className={className} />
+          <SVGIcon hasParentStyle icon="questionMark" />
         </span>
       </span>
     );
@@ -92,17 +93,17 @@ export const ToggleText = ({ className, copy, onClick }: ToggleTextProps) => {
 
   return (
     <span
-      className="nav-link toggle cursor-pointer select-none"
+      className="nav-link toggle cursor-pointer select-none hover:text-[var(--c-c)] hover:!fill-[var(--c-c)] hover:!stroke-[var(--c-c)]"
       role="button"
       onClick={onClick}
       style={style}
     >
       <span
-        className={`py-2 rounded font-display lowercase md:bg-transparent md:p-0 font-bold toggler-tex flex flex-row items-center`}
+        className={`py-2 rounded font-display lowercase md:bg-transparent md:p-0 font-bold toggler-text flex flex-row items-center hover:!text-[var(--c-c)] hover:!stroke-[var(--c-c)]`}
       >
-        <SVGIcon icon="skull" className={className} fill={colourScheme.b} />
+        <SVGIcon hasParentStyle icon="skull" />
         {copy.disableMinimal}
-        <SVGIcon icon="skull" className={className} fill={colourScheme.b} />
+        <SVGIcon hasParentStyle icon="skull" />
       </span>
     </span>
   );

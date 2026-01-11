@@ -17,33 +17,25 @@ export const LinkText = ({ className = "", children, href }: LinkType) => {
   return (
     <Link
       to={href}
-      className={`text-center ps-1 transition-colors duration-150
-        hover:text-[color:var(--accent)]${className}`}
-      style={
-        {
-          ["--accent" as any]: colourScheme.d,
-        } as React.CSSProperties
-      }
+      className={`text-center ps-1 transition-colors text-[var(--c-dark)] hover:text-[var(--c-b)] ${className}`}
     >
       {children}
     </Link>
   );
 };
 
-export const SocialsLink = ({
-  className = "",
-  href,
-  icon,
-  label,
-}: SocialsLinkType) => {
+export const SocialsLink = ({ href, icon, label }: SocialsLinkType) => {
+  const { isRestrictedColourScheme } = usePortfolioStore();
+  const colour = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-b)";
+  const hoverFill = isRestrictedColourScheme ? "var(--c-c)" : "var(--c-c)";
   return (
     <Link
       to={href}
-      className={`btn btn-link btn-floating btn-lg text-dark m-1 ${className}`}
+      className={`btn btn-link btn-floating btn-lg m-1`}
       aria-label={label}
       role="button"
     >
-      <SVGIcon icon={icon} height={36} width={36} hasAction />
+      <SVGIcon icon={icon} height={36} width={36} fill={colour} hoverFill={hoverFill} hasAction />
     </Link>
   );
 };
