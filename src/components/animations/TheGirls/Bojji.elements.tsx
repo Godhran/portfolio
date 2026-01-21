@@ -39,8 +39,7 @@ export const Eye = ({ cx, cy, r }: { cx: number; cy: number; r: number }) => {
 };
 
 export const Pupil = ({ cx, cy, r }: { cx: number; cy: number; r: number }) => {
-  const { isRestrictedColourScheme } = usePortfolioStore();
-  const fill = isRestrictedColourScheme ? "var(--c-dark)" : "var(--c-d)";
+  const fill = "var(--c-dark)";
   return <circle cx={cx} cy={cy} r={r} fill={fill} />;
 };
 

@@ -13,6 +13,28 @@ export const defaultColourScheme: ColourScheme = {
   f: "#ffcd75",
 };
 
+const RaginBeige: ColourScheme = {
+  light:'#fff5d7',
+  dark:'#2f1728',
+  a: "#ac9f40",
+  b: "#feb300",
+  c: "#ff5e6c",
+  d: "#ffaaab",
+  e: "#f5b539",
+  f: "#f5b539",
+};
+
+const GreenTreeline: ColourScheme = {
+  light:'#fff5d7',
+  dark:'#000624',
+  a: "#478559",
+  b: "#f95d9b",
+  c: "#b1af58",
+  d: "#39a0ca",
+  e: "#b1af58",
+  f: "#f5b539",
+}
+
 const alternativeScheme: ColourScheme = {
   light,
   dark,
@@ -90,10 +112,12 @@ const googleScheme: ColourScheme = {
 }
 
 export const vibrantColourSchemes: ColourScheme[] = [
-  googleScheme,
+  RaginBeige,
+  GreenTreeline,
+  // googleScheme,
   alternativeScheme,
-  alternativeScheme2,
+  // alternativeScheme2,
   gameBoyScheme,
-  alternativeScheme3,
+  // alternativeScheme3,
   altScheme
 ];
